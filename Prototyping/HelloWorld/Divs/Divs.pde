@@ -13,4 +13,18 @@ float DivY = appHeight * ??? / paperHeight;
 float DivWidth = appWidth * ??? / paperWidth;  
 float DivHeight = appHeight * ??? / paperHeight; 
 
+//rect( SongTitleDivX, SongTitleDivY, SongTitleDivWidth, SongTitleDivHeight );
+//rect( DivX, DivY, DivWidth, DivHeight );
+//rect( DivX, DivY, DivWidth, DivHeight );
+//rect( DivX, DivY, DivWidth, DivHeight );
+//rect( DivX, DivY, DivWidth, DivHeight );
+//rect( DivX, DivY, DivWidth, DivHeight );
+//rect( DivX, DivY, DivWidth, DivHeight );
+//rect( DivX, DivY, DivWidth, DivHeight );
+//rect( DivX, DivY, DivWidth, DivHeight );
+//rect( DivX, DivY, DivWidth, DivHeight );
+//rect( DivX, DivY, DivWidth, DivHeight );
+//rect( DivX, DivY, DivWidth, DivHeight );
+//rect( DivX, DivY, DivWidth, DivHeight );
+//rect( DivX, DivY, DivWidth, DivHeight );
 //rect( DivX, DivY, DivWidth, DivHeight );
