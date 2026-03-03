@@ -14,29 +14,28 @@ float DivWidth = appWidth * 192 / paperWidth;
 float DivHeight = appHeight * 162 / paperHeight;
 //
 //rect( SongTitleDivX, SongTitleDivY, SongTitleDivWidth, SongTitleDivHeight );
-float SongTitleDivX = appWidth * 50 / paperWidth; 
-float SongTitleDivY = appHeight * 144 / paperHeight; 
-float SongTitleDivWidth = appWidth * 150 / paperWidth;  
-float SongTitleDivHeight = appHeight * 117 / paperHeight;
-float rect = SongTitleDivX + SongTitleDivWidth + SongTitleDivY + SongTitleDivHeight
+float DivX = appWidth * 50 / paperWidth; 
+float DivY = appHeight * 144 / paperHeight; 
+float DivWidth = appWidth * 150 / paperWidth;  
+float DivHeight = appHeight * 117 / paperHeight;
 //
 //rect( PlayButtonDivX, PlayButtonDivY, PlayButtonDivWidth, PlayButtonDivHeight );
-;float PlayButtonDivX = appWidth * 150 / paperWidth; 
-float PlayButtonDivY = appHeight * 44 / paperHeight; 
+float DivX = appWidth * 150 / paperWidth; 
+float DivY = appHeight * 44 / paperHeight; 
 float PlayButtonDivWidth = appWidth * 160 / paperWidth;  
 float PlayButtonDivHeight = appHeight * 53 / paperHeight; 
 //
 //rect( PauseButtonDivX, PauseButtonDivY, PauseButtonDivWidth, PauseButtonDivHeight );
-float PauseButtonDivX = appWidth * 71 / paperWidth; 
-float PauseButtonDivY = appHeight * 15 / paperHeight; 
-float PauseButtonDivWidth = appWidth * 85 / paperWidth;  
-float PauseButtonDivHeight = appHeight * 25 / paperHeight; 
+float DivX = appWidth * 71 / paperWidth; 
+float DivY = appHeight * 15 / paperHeight; 
+float DivWidth = appWidth * 85 / paperWidth;  
+float DivHeight = appHeight * 25 / paperHeight; 
 //
-//rect( SkipTenDivX, SkipTenDivY, SkipTenDivWidth, SkipTenDivHeight );
-float SkipTenDivX = appWidth * 85 / paperWidth; 
-float SkipTenDivY = appHeight * 15 / paperHeight; 
-float SkipTenDivWidth = appWidth * 97 / paperWidth;  
-float SkipTenDivHeight = appHeight * 25 / paperHeight; 
+//rect( 'DivX, 'DivY, 'DivWidth, 'DivHeight );
+float DivX = appWidth * 85 / paperWidth; 
+float DivY = appHeight * 15 / paperHeight; 
+float DivWidth = appWidth * 97 / paperWidth;  
+float DivHeight = appHeight * 25 / paperHeight; 
 //
 //rect( BackTenDivX, BackTenDivY, BackTenDivWidth, BackTenDivHeight );
 float BackTenDivX = appWidth * 61 / paperWidth; 
@@ -110,9 +109,3 @@ float SongBarDivY = appHeight * 26 / paperHeight;
 float SongBarDivWidth = appWidth * 154 / paperWidth;  
 float SongBarDivHeight = appHeight * 28 / paperHeight; 
 //
-
-
-
-
-
-;
