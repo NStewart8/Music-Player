@@ -24,6 +24,7 @@ float DivX = appWidth * 150 / paperWidth;
 float DivY = appHeight * 44 / paperHeight; 
 float PlayButtonDivWidth = appWidth * 160 / paperWidth;  
 float PlayButtonDivHeight = appHeight * 53 / paperHeight; 
+triangle(PlayButtonDivX,PlayButtonDivY,PlayButtonDivHeight,PlayButtonDivWidth  , y3)
 //
 //rect( PauseButtonDivX, PauseButtonDivY, PauseButtonDivWidth, PauseButtonDivHeight );
 float DivX = appWidth * 71 / paperWidth; 
