@@ -8,19 +8,24 @@ int appHeight = displayHeight;
 //
 int paperWidth = 192;
 int paperHeight = 168;
-float DivX = appWidth * 0 / paperWidth; 
-float DivY = appHeight * 0 / paperHeight; 
-float DivWidth = appWidth * 192 / paperWidth;  
-float DivHeight = appHeight * 162 / paperHeight;
+float DivX = appWidth * 1/4; 
+float DivY = appHeight * 1/4; 
+float DivWidth = appWidth * 1/2;  
+float DivHeight = appHeight * 1/2;
 //
 //rect( SongTitleDivX, SongTitleDivY, SongTitleDivWidth, SongTitleDivHeight );
-float DivX = appWidth * 50 / paperWidth; 
-float DivY = appHeight * 144 / paperHeight; 
-float DivWidth = appWidth * 150 / paperWidth;  
-float DivHeight = appHeight * 117 / paperHeight;
+float SongTitleDivX = appWidth * 50 / paperWidth; 
+float SongTtleDivY = appHeight * 144 / paperHeight; 
+float SongTitleDivWidth = appWidth * 150 / paperWidth;  
+float SongTitleDivHeight = appHeight * 117 / paperHeight;
+float SongTitleDiv1 = DivX + DivWidth*1/4;
+float SongTitleDiv2 = DivY +  DivHeight*1/4;
+float SongTitleDiv3 = DivWidth*1/2;
+float SongTitleiv4 = DivHeight*1/2;
+rect( SongTitleDiv1, SongTitleDiv2, SongTitleDiv3, SongTitleiv4 );
 //
 //rect( PlayButtonDivX, PlayButtonDivY, PlayButtonDivWidth, PlayButtonDivHeight );
-float DivX = appWidth * 150 / paperWidth; 
+float PlayButtonD = DivX * DivWidth*1/4
 float DivY = appHeight * 44 / paperHeight; 
 float PlayButtonDivWidth = appWidth * 160 / paperWidth;  
 float PlayButtonDivHeight = appHeight * 53 / paperHeight; 
