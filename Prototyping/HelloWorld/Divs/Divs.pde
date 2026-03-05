@@ -13,66 +13,71 @@ float DivY = appHeight * 1/4;
 float DivWidth = appWidth * 1/2;  
 float DivHeight = appHeight * 1/2;
 //
-//rect( SongTitleDivX, SongTitleDivY, SongTitleDivWidth, SongTitleDivHeight );
 float SongTitleDivX = appWidth * 50 / paperWidth; 
-float SongTtleDivY = appHeight * 144 / paperHeight; 
+float SongTitleDivY = appHeight * 144 / paperHeight; 
 float SongTitleDivWidth = appWidth * 150 / paperWidth;  
 float SongTitleDivHeight = appHeight * 117 / paperHeight;
 float SongTitleDiv1 = DivX + DivWidth*1/4;
 float SongTitleDiv2 = DivY +  DivHeight*1/4;
 float SongTitleDiv3 = DivWidth*1/2;
 float SongTitleiv4 = DivHeight*1/2;
+rect( SongTitleDivX, SongTitleDivY, SongTitleDivWidth, SongTitleDivHeight );
 rect( SongTitleDiv1, SongTitleDiv2, SongTitleDiv3, SongTitleiv4 );
 //
-//rect( PlayButtonDivX, PlayButtonDivY, PlayButtonDivWidth, PlayButtonDivHeight );
-float PlayButtonD = DivX * DivWidth*1/4
-float DivY = appHeight * 44 / paperHeight; 
-float PlayButtonDivWidth = appWidth * 160 / paperWidth;  
-float PlayButtonDivHeight = appHeight * 53 / paperHeight; 
-triangle(PlayButtonDivX,PlayButtonDivY,PlayButtonDivHeight,PlayButtonDivWidth  , y3)
+float PlayButtonDivX = appWidth * 150 / paperWidth; 
+float PlayButtonDivY = appHeight * 44 / paperHeight;
+float PlayButtonDivWidth = appWidth * 160 / paperWidth;
+float PlayButtonDivHeight = appHeight * 53 / paperHeight;
+float PlayButtonDivX1 = DivX + DivWidth*1/4;
+;float PlayButtonDivY2 = DivY + DivHeight*1/4; 
+float PlayButtonDivX3 = DivX + DivWidth*3/4;  
+float PlayButtonDivY4 = DivY + DivHeight*1/2; 
+float PlayButtonDivX5 = DivX + DivWidth*1/4;
+float PlayButtonDivY6 = DivY + DivHeight*3/4; 
+rect( PlayButtonDivX, PlayButtonDivY, PlayButtonDivWidth, PlayButtonDivHeight )
+;triangle(PlayButtonDivX1,PlayButtonDivY2,PlayButtonDivX3,PlayButtonDivY4,PlayButtonDivX5,PlayButtonDivY6)
 //
-//rect( PauseButtonDivX, PauseButtonDivY, PauseButtonDivWidth, PauseButtonDivHeight );
-float DivX = appWidth * 71 / paperWidth; 
-float DivY = appHeight * 15 / paperHeight; 
-float DivWidth = appWidth * 85 / paperWidth;  
-float DivHeight = appHeight * 25 / paperHeight; 
+;float PauseButtonDivX = appWidth * 71 / paperWidth; 
+float PauseButtonDivY = appHeight * 15 / paperHeight; 
+float PauseButtonDivWidth = appWidth * 85 / paperWidth;  
+float PauseButtonDivHeight = appHeight * 25 / paperHeight; 
+;rect( PauseButtonDivX, PauseButtonDivY, PauseButtonDivWidth, PauseButtonDivHeight );
 //
-//rect( 'DivX, 'DivY, 'DivWidth, 'DivHeight );
-float DivX = appWidth * 85 / paperWidth; 
-float DivY = appHeight * 15 / paperHeight; 
-float DivWidth = appWidth * 97 / paperWidth;  
-float DivHeight = appHeight * 25 / paperHeight; 
+float SkipTenDivX = appWidth * 85 / paperWidth; 
+float SkipTenDivY = appHeight * 15 / paperHeight; 
+float SkipTenDivWidth = appWidth * 97 / paperWidth;  
+float SkipTenDivHeight = appHeight * 25 / paperHeight; 
+rect( SkipTenDivX, SkipTenDivY,SkipTenDivWidth, SkipTenDivHeight );
 //
-//rect( BackTenDivX, BackTenDivY, BackTenDivWidth, BackTenDivHeight );
 float BackTenDivX = appWidth * 61 / paperWidth; 
 float BackTenDivY = appHeight * 15 / paperHeight; 
 float BackTenDivWidth = appWidth * 71 / paperWidth;  
 float BackTenDivHeight = appHeight * 25 / paperHeight; 
+rect( BackTenDivX, BackTenDivY, BackTenDivWidth, BackTenDivHeight );
 //
-//rect( SkipSongDivX, SkipSongDivY, SkipSongDivWidth, SkipSongDivHeight );
 float SkipSongDivX = appWidth * 97 / paperWidth; 
 float SkipSongDivY = appHeight * 15 / paperHeight; 
 float SkipSongDivWidth = appWidth * 110 / paperWidth;  
 float SkipSongDivHeight = appHeight * 25 / paperHeight; 
+rect( SkipSongDivX, SkipSongDivY, SkipSongDivWidth, SkipSongDivHeight );
 //
-//rect( PrevSongDivX, PrevSongDivY, PrevSongDivWidth, PrevSongDivHeight );
 float PrevSongDivX = appWidth * 49 / paperWidth; 
 float PrevSongDivY = appHeight * 15 / paperHeight; 
 float PrevSongDivWidth = appWidth * 61 / paperWidth;  
 float PrevSongDivHeight = appHeight * 25 / paperHeight; 
-//
+rect( PrevSongDivX, PrevSongDivY, PrevSongDivWidth, PrevSongDivHeight );
 //rect( UnmuteDivX, UnmuteDivY, UnmuteDivWidth, UnmuteDivHeight );
 float UnmuteDivX = appWidth * 64 / paperWidth; 
 float UnmuteDivY = appHeight * 4 / paperHeight; 
 float UnmuteDivWidth = appWidth * 72 / paperWidth;  
 float UnmuteDivHeight = appHeight * 17 / paperHeight; 
+rect( UnmuteDivX, UnmuteDivY, UnmuteDivWidth, UnmuteDivHeight );
 //
-//rect( MuteDivX, MuteDivY, MuteDivWidth, MuteDivHeight );
 float  MuteDivX = appWidth * 72 / paperWidth; 
 float  MuteDivY = appHeight * 4 / paperHeight; 
 float  MuteDivWidth = appWidth * 80 / paperWidth;  
 float  MuteDivHeight = appHeight * 17 / paperHeight; 
-//
+rect( MuteDivX, MuteDivY, MuteDivWidth, MuteDivHeight );
 //rect( ShuffleDivX,  ShuffleDivY,  ShuffleDivWidth,  ShuffleDivHeight );
 float ShuffleDivX = appWidth * 80 / paperWidth; 
 float ShuffleDivY = appHeight * 4 / paperHeight; 
