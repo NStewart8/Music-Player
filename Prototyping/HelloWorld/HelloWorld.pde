@@ -1,10 +1,5 @@
 println("Hello World");
 //
-print("Hello");
-print("World");
+println("\nMy name is Nathan");
 //
-print("Hello");
-print("\nWorld");
-//
-print("Hello");
-print("\nWorld");
+println("\nAnd I like Pizza");
