@@ -2,7 +2,7 @@
 */
 //
 println(displayWidth, displayHeight);
-;fullScreen();
+fullScreen();
 int appWidth = displayWidth;
 int appHeight = displayHeight;
 //
@@ -19,10 +19,10 @@ float SongTitleDivY = 0;
 float SongTitleDivHeight = appHeight * 0.1;
 rect( SongTitleDivX, SongTitleDivY, SongTitleDivWidth, SongTitleDivHeight );
 //
-float PlayButtonDivWidth = appWidth * 0.1;
-float PlayButtonDivX = (appWidth / 3.5) - (PlayButtonDivWidth / 2);
-float PlayButtonDivY = 300;
-float PlayButtonDivHeight = appHeight * 0.1;
+float PlayButtonDivWidth = DivX + DivWidth*2/4;
+float PlayButtonDivX = DivX + DivWidth*2/4;
+float PlayButtonDivY = DivY + DivHeight*2/16;
+float PlayButtonDivHeight = DivY + DivHeight*2/16;
 rect( PlayButtonDivX, PlayButtonDivY, PlayButtonDivWidth, PlayButtonDivHeight );
 float PlayButtonDivX1 = DivX + DivWidth*1/16;
 ;float PlayButtonDivY2 = DivY + DivHeight*1/16; 
@@ -33,11 +33,11 @@ float PlayButtonDivY6 = DivY + DivHeight*3/16;
 rect( PlayButtonDivX, PlayButtonDivY, PlayButtonDivWidth, PlayButtonDivHeight )
 ;triangle(PlayButtonDivX1,PlayButtonDivY2,PlayButtonDivX3,PlayButtonDivY4,PlayButtonDivX5,PlayButtonDivY6)
 //
-;float PauseButtonDivX = appWidth * 71 / paperWidth; 
-float PauseButtonDivY = appHeight * 15 / paperHeight; 
-float PauseButtonDivWidth = appWidth * 85 / paperWidth;  
-float PauseButtonDivHeight = appHeight * 25 / paperHeight; 
-;rect( PauseButtonDivX, PauseButtonDivY, PauseButtonDivWidth, PauseButtonDivHeight );
+;float ScreenDivX = DivX + DivWidth*3/16;  
+float ScreenDivY = DivY + DivHeight*3/16; 
+float ScreenDivWidth = DivX + DivWidth*3/24;
+float ScreenDivHeight= DivY + DivHeight*3/24;
+;rect( ScreenDivX, ScreenDivY, ScreenDivWidth, ScreenDivHeight );
 //
 float SkipTenDivX = appWidth * 85 / paperWidth; 
 float SkipTenDivY = appHeight * 15 / paperHeight; 
@@ -81,11 +81,11 @@ float ShuffleDivWidth = appWidth * 90 / paperWidth;
 float ShuffleDivHeight = appHeight * 17 / paperHeight; 
 rect( ShuffleDivX,  ShuffleDivY,  ShuffleDivWidth,  ShuffleDivHeight );
 //
-float NoScreenDivX = appWidth * 90 / paperWidth; 
-float NoScreenDivY = appHeight * 4 / paperHeight; 
-float NoScreenDivWidth = appWidth * 100 / paperWidth;  
-float NoScreenDivHeight = appHeight * 17 / paperHeight; 
-rect( NoScreenDivX, NoScreenDivY, NoScreenDivWidth, NoScreenDivHeight );
+float NoPauseButtonDivX = appWidth * 90 / paperWidth; 
+float NoPauseButtonDivY = appHeight * 4 / paperHeight; 
+float NoPauseButtonDivWidth = appWidth * 100 / paperWidth;  
+float NoPauseButtonDivHeight = appHeight * 17 / paperHeight; 
+rect( NoPauseButtonDivX, NoPauseButtonDivY, NoPauseButtonDivWidth, NoPauseButtonDivHeight );
 //
 float DoubleSpeedDivX = appWidth * 150 / paperWidth; 
 float DoubleSpeedDivY = appHeight * 38 / paperHeight; 
@@ -105,11 +105,11 @@ float ExitButtonDivWidth = appWidth * 197 / paperWidth;
 float ExitButtonDivHeight = appHeight * 168 / paperHeight; 
 rect( ExitButtonDivX, ExitButtonDivY, ExitButtonDivWidth, ExitButtonDivHeight );
 //
-float ScreenDivX = appWidth * 11 / paperWidth; 
-float ScreenDivY = appHeight * 30 / paperHeight; 
-float ScreenDivWidth = appWidth * 150 / paperWidth;  
-float ScreenDivHeight = appHeight * 139 / paperHeight; 
-rect( ScreenDivX, ScreenDivY, ScreenDivWidth, ScreenDivHeight );
+float PauseButtonDivX = appWidth * 11 / paperWidth; 
+float PauseButtonDivY = appHeight * 30 / paperHeight; 
+float PauseButtonDivWidth = appWidth * 150 / paperWidth;  
+float PauseButtonDivHeight = appHeight * 139 / paperHeight; 
+rect( PauseButtonDivX, PauseButtonDivY, PauseButtonDivWidth, PauseButtonDivHeight );
 //
 float SongBarDivX = appWidth * 7 / paperWidth; 
 float SongBarDivY = appHeight * 26 / paperHeight; 
