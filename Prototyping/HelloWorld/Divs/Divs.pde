@@ -19,17 +19,19 @@ float SongTitleDivY = 0;
 float SongTitleDivHeight = appHeight * 0.1;
 rect( SongTitleDivX, SongTitleDivY, SongTitleDivWidth, SongTitleDivHeight );
 //
-float PlayButtonDivWidth = DivX + DivWidth*2/4;
-float PlayButtonDivX = DivX + DivWidth*2/4;
-float PlayButtonDivY = DivY + DivHeight*2/16;
-float PlayButtonDivHeight = DivY + DivHeight*2/16;
+float PlayButtonDivWidth = DivWidth/9;
+float PlayButtonDivX = DivX + DivWidth*0.814;
+float PlayButtonDivY = DivY + DivHeight*0.645;
+float PlayButtonDivHeight = DivHeight/6;
 rect( PlayButtonDivX, PlayButtonDivY, PlayButtonDivWidth, PlayButtonDivHeight );
-float PlayButtonDivX1 = DivX + DivWidth*1/16;
-;float PlayButtonDivY2 = DivY + DivHeight*1/16; 
-float PlayButtonDivX3 = DivX + DivWidth*3/24;  
-float PlayButtonDivY4 = DivY + DivHeight*1/8; 
-float PlayButtonDivX5 = DivX + DivWidth*1/16;
-float PlayButtonDivY6 = DivY + DivHeight*3/16; 
+float MoveX = 0.2f; 
+float MoveY = 0.1f;
+float PlayButtonDivX1 = DivX + DivWidth*1/16*(1/16+MoveX);
+;float PlayButtonDivY2 = DivY + DivHeight*1/16*(1/16+MoveY); 
+float PlayButtonDivX3 = DivX + DivWidth*3/24*(3/24+MoveX) ;  
+float PlayButtonDivY4 = DivY + DivHeight*1/8*(1/8+MoveY); 
+float PlayButtonDivX5 = DivX + DivWidth*1/16*(1/16+MoveX);
+float PlayButtonDivY6 = DivY + DivHeight*3/16*(1/16+MoveY); 
 rect( PlayButtonDivX, PlayButtonDivY, PlayButtonDivWidth, PlayButtonDivHeight )
 ;triangle(PlayButtonDivX1,PlayButtonDivY2,PlayButtonDivX3,PlayButtonDivY4,PlayButtonDivX5,PlayButtonDivY6)
 //
