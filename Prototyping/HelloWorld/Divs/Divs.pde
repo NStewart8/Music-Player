@@ -24,14 +24,14 @@ float PlayButtonDivX = DivX + DivWidth*0.814;
 float PlayButtonDivY = DivY + DivHeight*0.645;
 float PlayButtonDivHeight = DivHeight/6;
 rect( PlayButtonDivX, PlayButtonDivY, PlayButtonDivWidth, PlayButtonDivHeight );
-float MoveX = 0.2f; 
-float MoveY = 0.1f;
-float PlayButtonDivX1 = DivX + DivWidth*1/16*(1/16+MoveX);
-;float PlayButtonDivY2 = DivY + DivHeight*1/16*(1/16+MoveY); 
-float PlayButtonDivX3 = DivX + DivWidth*3/24*(3/24+MoveX) ;  
-float PlayButtonDivY4 = DivY + DivHeight*1/8*(1/8+MoveY); 
-float PlayButtonDivX5 = DivX + DivWidth*1/16*(1/16+MoveX);
-float PlayButtonDivY6 = DivY + DivHeight*3/16*(1/16+MoveY); 
+float MoveX =750f; 
+float MoveY = 330f;
+float PlayButtonDivX1 = DivX + DivWidth*1/16+(1/16+MoveX);
+;float PlayButtonDivY2 = DivY + DivHeight*1/16+(1/16+MoveY); 
+float PlayButtonDivX3 = DivX + DivWidth*1/8+(1/8+MoveX) ;  
+float PlayButtonDivY4 = DivY + DivHeight*1/8+(1/8+MoveY); 
+float PlayButtonDivX5 = DivX + DivWidth*1/16+(1/16+MoveX);
+float PlayButtonDivY6 = DivY + DivHeight*3/16+(3/16+MoveY); 
 rect( PlayButtonDivX, PlayButtonDivY, PlayButtonDivWidth, PlayButtonDivHeight )
 ;triangle(PlayButtonDivX1,PlayButtonDivY2,PlayButtonDivX3,PlayButtonDivY4,PlayButtonDivX5,PlayButtonDivY6)
 //
@@ -40,13 +40,23 @@ float ScreenDivY = DivY + DivHeight*3/16;
 float ScreenDivWidth = DivX + DivWidth*3/24;
 float ScreenDivHeight= DivY + DivHeight*3/24;
 ;rect( ScreenDivX, ScreenDivY, ScreenDivWidth, ScreenDivHeight );
-//
-float SkipTenDivX = appWidth * 85 / paperWidth; 
-float SkipTenDivY = appHeight * 15 / paperHeight; 
-float SkipTenDivWidth = appWidth * 97 / paperWidth;  
-float SkipTenDivHeight = appHeight * 25 / paperHeight; 
-rect( SkipTenDivX, SkipTenDivY,SkipTenDivWidth, SkipTenDivHeight );
-//
+// 
+float SkipTenDivWidth = DivWidth/12;
+float SkipTenDivX = DivX + DivWidth*0.250;
+float SkipTenDivY = DivY + DivHeight*0.92;
+float SkipTenDivHeight = DivHeight/9;
+float SkipMoveX =236f; 
+float SkipMoveY = 495f;
+float SkipTenDivX1 = DivX + DivWidth*0.03125+(0.03125+SkipMoveX);
+;float SkipTenDivY2 = DivY + DivHeight*0.03125+(0.03125+SkipMoveY); 
+float SkipTenDivX3 = DivX + DivWidth*0.0625+(0.0625+SkipMoveX) ;  
+float SkipTenDivY4 = DivY + DivHeight*0.0625+(0.0625+SkipMoveY); 
+float SkipTenDivX5 = DivX + DivWidth*0.03125+(0.03125+SkipMoveX);
+float SkipTenDivY6 = DivY + DivHeight*0.09375+(0.09375+SkipMoveY); 
+;rect( SkipTenDivX, SkipTenDivY,SkipTenDivWidth, SkipTenDivHeight );
+;triangle(SkipTenDivX1,SkipTenDivY2,SkipTenDivX3,SkipTenDivY4,SkipTenDivX5,SkipTenDivY6)
+///
+
 float BackTenDivX = appWidth * 61 / paperWidth; 
 float BackTenDivY = appHeight * 15 / paperHeight; 
 float BackTenDivWidth = appWidth * 71 / paperWidth;  
