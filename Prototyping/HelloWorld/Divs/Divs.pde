@@ -41,28 +41,54 @@ float ScreenDivWidth = DivX + DivWidth*3/24;
 float ScreenDivHeight= DivY + DivHeight*3/24;
 ;rect( ScreenDivX, ScreenDivY, ScreenDivWidth, ScreenDivHeight );
 // 
-float SkipTenDivWidth = DivWidth/12;
-float SkipTenDivX = DivX + DivWidth*0.250;
-float SkipTenDivY = DivY + DivHeight*0.92;
-float SkipTenDivHeight = DivHeight/9;
-float SkipMoveX =236f; 
-float SkipMoveY = 495f;
-float SkipTenDivX1 = DivX + DivWidth*0.03125+(0.03125+SkipMoveX);
-;float SkipTenDivY2 = DivY + DivHeight*0.03125+(0.03125+SkipMoveY); 
-float SkipTenDivX3 = DivX + DivWidth*0.0625+(0.0625+SkipMoveX) ;  
-float SkipTenDivY4 = DivY + DivHeight*0.0625+(0.0625+SkipMoveY); 
-float SkipTenDivX5 = DivX + DivWidth*0.03125+(0.03125+SkipMoveX);
-float SkipTenDivY6 = DivY + DivHeight*0.09375+(0.09375+SkipMoveY); 
-;rect( SkipTenDivX, SkipTenDivY,SkipTenDivWidth, SkipTenDivHeight );
-;triangle(SkipTenDivX1,SkipTenDivY2,SkipTenDivX3,SkipTenDivY4,SkipTenDivX5,SkipTenDivY6)
-///
-
-float BackTenDivX = appWidth * 61 / paperWidth; 
-float BackTenDivY = appHeight * 15 / paperHeight; 
-float BackTenDivWidth = appWidth * 71 / paperWidth;  
-float BackTenDivHeight = appHeight * 25 / paperHeight; 
-rect( BackTenDivX, BackTenDivY, BackTenDivWidth, BackTenDivHeight );
+float PrevSongDivWidth = DivWidth/12;
+float PrevSongDivX = DivX + DivWidth*0.250;
+float PrevSongDivY = DivY + DivHeight*0.92;
+float PrevSongDivHeight = DivHeight/9;
+float PrevSongMoveX =236f; 
+float PrevSongMoveY = 495f;
+float PrevSongDivX1 = DivX + DivWidth*0.0625+(0.03125+PrevSongMoveX);
+;float PrevSongDivY2 = DivY + DivHeight*0.03125+(0.03125+PrevSongMoveY); 
+float PrevSongDivX3 = DivX + DivWidth*0.03125+(0.0625+PrevSongMoveX) ;  
+float PrevSongDivY4 = DivY + DivHeight*0.0625+(0.0625+PrevSongMoveY); 
+float PrevSongDivX5 = DivX + DivWidth*0.0625+(0.03125+PrevSongMoveX);
+float PrevSongDivY6 = DivY + DivHeight*0.09375+(0.09375+PrevSongMoveY); 
+;rect( PrevSongDivX, PrevSongDivY,PrevSongDivWidth, PrevSongDivHeight );
+;triangle(PrevSongDivX1,PrevSongDivY2,PrevSongDivX3,PrevSongDivY4,PrevSongDivX5,PrevSongDivY6)
+;float moveX = 236f; 
+float moveY = 495f;
+float lineLength = 20f; 
+line(PrevSongDivX3, PrevSongDivY2, PrevSongDivX3, PrevSongDivY6);
 //
+float BackTenDivWidth = DivWidth/12;
+float BackTenDivX = DivX + DivWidth*0.335;
+float BackTenDivY = DivY + DivHeight*0.92;
+float BackTenDivHeight = DivHeight/9;
+float BackTenMoveX =316f; 
+float BackTenMoveY = 495f;
+float BackTenDivX1 = DivX + DivWidth*0.0625+(0.03125+BackTenMoveX);
+;float BackTenDivY2 = DivY + DivHeight*0.03125+(0.03125+BackTenMoveY); 
+float BackTenDivX3 = DivX + DivWidth*0.03125+(0.0625+BackTenMoveX) ;  
+float BackTenDivY4 = DivY + DivHeight*0.0625+(0.0625+BackTenMoveY); 
+float BackTenDivX5 = DivX + DivWidth*0.0625+(0.03125+BackTenMoveX);
+float BackTenDivY6 = DivY + DivHeight*0.09375+(0.09375+BackTenMoveY); 
+;rect( BackTenDivX, BackTenDivY, BackTenDivWidth, BackTenDivHeight );
+;triangle(BackTenDivX1,BackTenDivY2,BackTenDivX3,BackTenDivY4,BackTenDivX5,BackTenDivY6)
+;
+float PauseDivWidth = DivWidth/12;
+float PauseDivX = DivX + DivWidth*0.419;
+float PauseDivY = DivY + DivHeight*0.92;
+float PauseDivHeight = DivHeight/9;
+;rect( PauseDivX, PauseDivY, PauseDivWidth, PauseDivHeight );
+float PausemoveX = 936f; // Left-to-right position
+float PausemoveY = 495f; // Top position
+float barWidth = 10f; // Thickness of each bar
+float spacing = 15f; // Space between the two bars
+float barHeight = 40f; // How tall the bars are
+// Left Bar
+rect(PausemoveX, moveY, barWidth, Height);
+// Right Bar (moved over by barWidth + spacing)
+rect(PausemoveX + barWidth + spacing, moveY, barWidth, barHeight);
 float SkipSongDivX = appWidth * 97 / paperWidth; 
 float SkipSongDivY = appHeight * 15 / paperHeight; 
 float SkipSongDivWidth = appWidth * 110 / paperWidth;  
