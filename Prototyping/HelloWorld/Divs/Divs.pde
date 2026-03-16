@@ -86,20 +86,28 @@ float barWidth = 10f; // Thickness of each bar
 float spacing = 15f; // Space between the two bars
 float barHeight = 40f; // How tall the bars are
 // Left Bar
-rect(PausemoveX, moveY, barWidth, Height);
+rect(PausemoveX, moveY, barWidth, barHeight);
 // Right Bar (moved over by barWidth + spacing)
 rect(PausemoveX + barWidth + spacing, moveY, barWidth, barHeight);
-float SkipSongDivX = appWidth * 97 / paperWidth; 
-float SkipSongDivY = appHeight * 15 / paperHeight; 
-float SkipSongDivWidth = appWidth * 110 / paperWidth;  
-float SkipSongDivHeight = appHeight * 25 / paperHeight; 
-rect( SkipSongDivX, SkipSongDivY, SkipSongDivWidth, SkipSongDivHeight );
 //
-float PrevSongDivX = appWidth * 49 / paperWidth; 
-float PrevSongDivY = appHeight * 15 / paperHeight; 
-float PrevSongDivWidth = appWidth * 61 / paperWidth;  
-float PrevSongDivHeight = appHeight * 25 / paperHeight; 
-rect( PrevSongDivX, PrevSongDivY, PrevSongDivWidth, PrevSongDivHeight );
+float SkipSongDivWidth = DivWidth/12;
+float SkipSongDivX = DivX + DivWidth*0.504;
+float SkipSongDivY = DivY + DivHeight*0.92;
+float SkipSongDivHeight = DivHeight/9;
+float SkipSongMoveX =480f; 
+float SkipSongMoveY = 495f;
+float SkipSonglineLength = 20f; 
+float SkipSongDivX1 = DivX + DivWidth*0.03125+(0.0625+SkipSongMoveX);
+;float SkipSongDivY2 = DivY + DivHeight*0.03125+(0.03125+SkipSongMoveY); 
+float SkipSongDivX3 = DivX + DivWidth*0.0625+(0.03125+SkipSongMoveX) ;  
+float SkipSongDivY4 = DivY + DivHeight*0.0625+(0.0625+SkipSongMoveY); 
+float SkipSongDivX5 = DivX + DivWidth*0.03125+(0.0625+SkipSongMoveX);
+float SkipSongDivY6 = DivY + DivHeight*0.09375+(0.09375+SkipSongMoveY); 
+;rect( SkipSongDivX, SkipSongDivY,SkipSongDivWidth, SkipSongDivHeight );
+;triangle(SkipSongDivX1,SkipSongDivY2,SkipSongDivX3,SkipSongDivY4,SkipSongDivX5,SkipSongDivY6)
+;line(SkipSongDivX3, SkipSongDivY2, SkipSongDivX3, SkipSongDivY6);
+//
+;
 //
 float UnmuteDivX = appWidth * 64 / paperWidth; 
 float UnmuteDivY = appHeight * 4 / paperHeight; 
