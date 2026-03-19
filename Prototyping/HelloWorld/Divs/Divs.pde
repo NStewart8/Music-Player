@@ -80,15 +80,15 @@ float PauseDivX = DivX + DivWidth*0.419;
 float PauseDivY = DivY + DivHeight*0.92;
 float PauseDivHeight = DivHeight/9;
 ;rect( PauseDivX, PauseDivY, PauseDivWidth, PauseDivHeight );
-float PausemoveX = 936f; // Left-to-right position
-float PausemoveY = 495f; // Top position
+float PausemoveX = 906f; // Left-to-right position
+float PausemoveY = 780f; // Top position
 float barWidth = 10f; // Thickness of each bar
 float spacing = 15f; // Space between the two bars
 float barHeight = 40f; // How tall the bars are
 // Left Bar
-rect(PausemoveX, moveY, barWidth, barHeight);
+rect(PausemoveX, PausemoveY, barWidth, barHeight);
 // Right Bar (moved over by barWidth + spacing)
-rect(PausemoveX + barWidth + spacing, moveY, barWidth, barHeight);
+rect(PausemoveX + barWidth + spacing, PausemoveY, barWidth, barHeight);
 //
 float SkipSongDivWidth = DivWidth/12;
 float SkipSongDivX = DivX + DivWidth*0.504;
@@ -107,15 +107,13 @@ float SkipSongDivY6 = DivY + DivHeight*0.09375+(0.09375+SkipSongMoveY);
 ;triangle(SkipSongDivX1,SkipSongDivY2,SkipSongDivX3,SkipSongDivY4,SkipSongDivX5,SkipSongDivY6)
 ;line(SkipSongDivX3, SkipSongDivY2, SkipSongDivX3, SkipSongDivY6);
 //
-;
-//
-float UnmuteDivX = appWidth * 64 / paperWidth; 
-float UnmuteDivY = appHeight * 4 / paperHeight; 
-float UnmuteDivWidth = appWidth * 72 / paperWidth;  
-float UnmuteDivHeight = appHeight * 17 / paperHeight; 
-rect( UnmuteDivX, UnmuteDivY, UnmuteDivWidth, UnmuteDivHeight );
-//
-float  MuteDivX = appWidth * 72 / paperWidth; 
+float UnmuteDivWidth = DivWidth/12;
+float UnmuteDivX = DivX + DivWidth*0.588;
+float UnmuteDivY = DivY + DivHeight*0.92;
+float UnmuteDivHeight = DivHeight/9;
+;rect( UnmuteDivX, UnmuteDivY,UnmuteDivWidth, UnmuteDivHeight );
+line(UnmuteDivX, UnmuteDivY, UnmuteDivX + UnmuteDivWidth, UnmuteDivY + UnmuteDivHeight);
+       float  MuteDivX = appWidth * 72 / paperWidth; 
 float  MuteDivY = appHeight * 4 / paperHeight; 
 float  MuteDivWidth = appWidth * 80 / paperWidth;  
 float  MuteDivHeight = appHeight * 17 / paperHeight; 
