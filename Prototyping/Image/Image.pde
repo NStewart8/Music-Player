@@ -3,6 +3,8 @@
 //
 //Display
 fullScreen();
+int appwidth = displayWidth;
+;int appheight = displayHeight;
 //
 String upArow = "..";
 String dependenciesFolder = "dependancies"
@@ -22,10 +24,11 @@ PImage Image1 = loadImage(pathway1);
 image(Image1, 0, 0);
 //
 int numberofButtons = 13;
-int WidthofButton = AppWidth/numberofButtons;
+int WidthofButton = appwidth/numberofButtons;
+int beginningButtonSpace = WidthofButton;
 float ImageDivX = beginningButtonSpace;
 float ImageDivY = appheight*4.5/20;
-;float ImageDivWidth = appwidth*1/2 - beginningButttonSpace*1.5;
+float ImageDivWidth = appwidth*1/2 - beginningButtonSpace*1.5;
 float ImageDivHeight = appheight*1.5/5;
 int ImageWidth = 225;
 int ImageHeight =225;
@@ -33,7 +36,11 @@ println (float (ImageWidth)/float (ImageHeight));
 //Div: Image
 //
 float Image2AspectRatio_GreatOne = (ImageWidth > ImageHeight) ? float(ImageWidth)/float(ImageHeight) : float(ImageHeight)/float(ImageWidth) ;
-println(Image2AspectRatio_GreatOne);
+//println("Verify Image Aspect Ratio Greater than One:", Image2AspectRatio_GreatOne>=1, "\Actual Number:", Image2AspectRatio_GreatOne);
 float ImageWidthAdjusted = ImageDivWidth;
-float ImageHeightAdjusted = (ImageWidth >= ImageDivWidth) ? ImageWidthAdjusted * Image2AspectRatio_GreatOne : ImageHeightAdjusted/Image2AspectRatio_GreatOne
-;rect (ImageDivX, ImageDivY, ImageWidthAdjusted, ImageHeightAdjusted);
+float ImageHeightAdjusted = (ImageWidth >= ImageDivWidth) ? ImageWidthAdjusted/Image2AspectRatio_GreatOne : ImageHeightAdjusted/Image2AspectRatio_GreatOne;
+while (ImageHeightAdjusted > ImageDivHeight) {
+ImageWidthAdjusted *= 0.99;
+}//End while
+println( "Comparison of ImageHeight and DivhHeight:", ImageHeight, ImageDivHeight);
+rect (ImageDivX, ImageDivY, ImageWidthAdjusted, ImageHeightAdjusted);
