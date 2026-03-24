@@ -107,23 +107,33 @@ float SkipSongDivY6 = DivY + DivHeight*0.09375+(0.09375+SkipSongMoveY);
 ;triangle(SkipSongDivX1,SkipSongDivY2,SkipSongDivX3,SkipSongDivY4,SkipSongDivX5,SkipSongDivY6)
 ;line(SkipSongDivX3, SkipSongDivY2, SkipSongDivX3, SkipSongDivY6);
 //
+float muteDivWidth = DivWidth/12;
+float muteDivX = DivX + DivWidth*0.588;
+float muteDivY = DivY + DivHeight*0.92;
+float muteDivHeight = DivHeight/9;
+;rect( muteDivX, muteDivY,muteDivWidth, muteDivHeight );
+line(muteDivX, muteDivY, muteDivX + muteDivWidth, muteDivY + muteDivHeight);
+//
 float UnmuteDivWidth = DivWidth/12;
-float UnmuteDivX = DivX + DivWidth*0.588;
+float UnmuteDivX = DivX + DivWidth*0.672;
 float UnmuteDivY = DivY + DivHeight*0.92;
 float UnmuteDivHeight = DivHeight/9;
+float checkX1 = UnmuteDivX + UnmuteDivWidth * 0.25;
+float checkY1 = UnmuteDivY + UnmuteDivHeight * 0.50;
+float checkX2 = UnmuteDivX + UnmuteDivWidth * 0.45;
+float checkY2 = UnmuteDivY + UnmuteDivHeight * 0.75;
+float checkX3 = UnmuteDivX + UnmuteDivWidth * 0.75;
+float checkY3 = UnmuteDivY + UnmuteDivHeight * 0.25;
 ;rect( UnmuteDivX, UnmuteDivY,UnmuteDivWidth, UnmuteDivHeight );
-line(UnmuteDivX, UnmuteDivY, UnmuteDivX + UnmuteDivWidth, UnmuteDivY + UnmuteDivHeight);
-       float  MuteDivX = appWidth * 72 / paperWidth; 
-float  MuteDivY = appHeight * 4 / paperHeight; 
-float  MuteDivWidth = appWidth * 80 / paperWidth;  
-float  MuteDivHeight = appHeight * 17 / paperHeight; 
-rect( MuteDivX, MuteDivY, MuteDivWidth, MuteDivHeight );
+line(checkX1, checkY1, checkX2, checkY2);
+line(checkX2, checkY2, checkX3, checkY3); 
 //
 float ShuffleDivX = appWidth * 80 / paperWidth; 
 float ShuffleDivY = appHeight * 4 / paperHeight; 
 float ShuffleDivWidth = appWidth * 90 / paperWidth;  
 float ShuffleDivHeight = appHeight * 17 / paperHeight; 
 rect( ShuffleDivX,  ShuffleDivY,  ShuffleDivWidth,  ShuffleDivHeight );
+//
 //
 float NoPauseButtonDivX = appWidth * 90 / paperWidth; 
 float NoPauseButtonDivY = appHeight * 4 / paperHeight; 
