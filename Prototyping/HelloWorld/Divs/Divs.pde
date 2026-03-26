@@ -80,14 +80,13 @@ float PauseDivX = DivX + DivWidth*0.419;
 float PauseDivY = DivY + DivHeight*0.92;
 float PauseDivHeight = DivHeight/9;
 ;rect( PauseDivX, PauseDivY, PauseDivWidth, PauseDivHeight );
-float PausemoveX = 906f; // Left-to-right position
-float PausemoveY = 780f; // Top position
-float barWidth = 10f; // Thickness of each bar
-float spacing = 15f; // Space between the two bars
-float barHeight = 40f; // How tall the bars are
-// Left Bar
+float PausemoveX = 906f; 
+float PausemoveY = 780f; 
+float barWidth = 10f; 
+float spacing = 15f; 
+float barHeight = 40f; 
+//
 rect(PausemoveX, PausemoveY, barWidth, barHeight);
-// Right Bar (moved over by barWidth + spacing)
 rect(PausemoveX + barWidth + spacing, PausemoveY, barWidth, barHeight);
 //
 float SkipSongDivWidth = DivWidth/12;
@@ -114,60 +113,28 @@ float muteDivHeight = DivHeight/9;
 ;rect( muteDivX, muteDivY,muteDivWidth, muteDivHeight );
 line(muteDivX, muteDivY, muteDivX + muteDivWidth, muteDivY + muteDivHeight);
 //
-float UnmuteDivWidth = DivWidth/12;
-float UnmuteDivX = DivX + DivWidth*0.672;
-float UnmuteDivY = DivY + DivHeight*0.92;
-float UnmuteDivHeight = DivHeight/9;
-float checkX1 = UnmuteDivX + UnmuteDivWidth * 0.25;
-float checkY1 = UnmuteDivY + UnmuteDivHeight * 0.50;
-float checkX2 = UnmuteDivX + UnmuteDivWidth * 0.45;
-float checkY2 = UnmuteDivY + UnmuteDivHeight * 0.75;
-float checkX3 = UnmuteDivX + UnmuteDivWidth * 0.75;
-float checkY3 = UnmuteDivY + UnmuteDivHeight * 0.25;
-;rect( UnmuteDivX, UnmuteDivY,UnmuteDivWidth, UnmuteDivHeight );
+float ShuffleeDivWidth = DivWidth/12;
+float ShuffleeDivX = DivX + DivWidth*0.672;
+float ShuffleeDivY = DivY + DivHeight*0.92;
+float ShuffleeDivHeight = DivHeight/9;
+float checkX1 = ShuffleeDivX + ShuffleeDivWidth * 0.25;
+float checkY1 = ShuffleeDivY + ShuffleeDivHeight * 0.50;
+float checkX2 = ShuffleeDivX + ShuffleeDivWidth * 0.45;
+float checkY2 = ShuffleeDivY + ShuffleeDivHeight * 0.75;
+float checkX3 = ShuffleeDivX + ShuffleeDivWidth * 0.75;
+float checkY3 = ShuffleeDivY + ShuffleeDivHeight * 0.25;
+;rect( ShuffleeDivX, ShuffleeDivY,ShuffleeDivWidth, ShuffleeDivHeight );
 line(checkX1, checkY1, checkX2, checkY2);
 line(checkX2, checkY2, checkX3, checkY3); 
 //
-float ShuffleDivX = appWidth * 80 / paperWidth; 
-float ShuffleDivY = appHeight * 4 / paperHeight; 
-float ShuffleDivWidth = appWidth * 90 / paperWidth;  
-float ShuffleDivHeight = appHeight * 17 / paperHeight; 
+float ShuffleDivWidth = DivWidth/12;
+float ShuffleDivX = DivX + DivWidth*0.757;
+float ShuffleDivY = DivY + DivHeight*0.92;
+float ShuffleDivHeight = DivHeight/9;
+line(ShuffleDivX, ShuffleDivY, ShuffleDivX + ShuffleDivWidth, ShuffleDivY + ShuffleDivHeight);
+line(ShuffleDivX, ShuffleDivY + ShuffleDivHeight, ShuffleDivX + ShuffleDivWidth, ShuffleDivY);
+float arrowSize = ShuffleDivWidth * 0.5; 
+triangle(ShuffleDivX + ShuffleDivWidth, ShuffleDivY,ShuffleDivX + ShuffleDivWidth - arrowSize, ShuffleDivY,ShuffleDivX + ShuffleDivWidth, ShuffleDivY + arrowSize);
+triangle(ShuffleDivX + ShuffleDivWidth, ShuffleDivY + ShuffleDivHeight,ShuffleDivX + ShuffleDivWidth - arrowSize, ShuffleDivY + ShuffleDivHeight,ShuffleDivX + ShuffleDivWidth, ShuffleDivY + ShuffleDivHeight - arrowSize);
 rect( ShuffleDivX,  ShuffleDivY,  ShuffleDivWidth,  ShuffleDivHeight );
-//
-//
-float NoPauseButtonDivX = appWidth * 90 / paperWidth; 
-float NoPauseButtonDivY = appHeight * 4 / paperHeight; 
-float NoPauseButtonDivWidth = appWidth * 100 / paperWidth;  
-float NoPauseButtonDivHeight = appHeight * 17 / paperHeight; 
-rect( NoPauseButtonDivX, NoPauseButtonDivY, NoPauseButtonDivWidth, NoPauseButtonDivHeight );
-//
-float DoubleSpeedDivX = appWidth * 150 / paperWidth; 
-float DoubleSpeedDivY = appHeight * 38 / paperHeight; 
-float DoubleSpeedDivWidth = appWidth * 160 / paperWidth;  
-float DoubleSpeedDivHeight = appHeight * 44 / paperHeight; 
-rect( DoubleSpeedDivX, DoubleSpeedDivY, DoubleSpeedDivWidth, DoubleSpeedDivHeight );
-//
-float PlaylistDivX = appWidth * 150 / paperWidth; 
-float PlaylistDivY = appHeight * 30 / paperHeight; 
-float PlaylistDivWidth = appWidth * 160 / paperWidth;  
-float PlaylistDivHeight = appHeight * 38 / paperHeight; 
-rect( PlaylistDivX, PlaylistDivY, PlaylistDivWidth, PlaylistDivHeight );
-//
-float ExitButtonDivX = appWidth * 190 / paperWidth; 
-float ExitButtonDivY = appHeight * 162 / paperHeight; 
-float ExitButtonDivWidth = appWidth * 197 / paperWidth;  
-float ExitButtonDivHeight = appHeight * 168 / paperHeight; 
-rect( ExitButtonDivX, ExitButtonDivY, ExitButtonDivWidth, ExitButtonDivHeight );
-//
-float PauseButtonDivX = appWidth * 11 / paperWidth; 
-float PauseButtonDivY = appHeight * 30 / paperHeight; 
-float PauseButtonDivWidth = appWidth * 150 / paperWidth;  
-float PauseButtonDivHeight = appHeight * 139 / paperHeight; 
-rect( PauseButtonDivX, PauseButtonDivY, PauseButtonDivWidth, PauseButtonDivHeight );
-//
-float SongBarDivX = appWidth * 7 / paperWidth; 
-float SongBarDivY = appHeight * 26 / paperHeight; 
-float SongBarDivWidth = appWidth * 154 / paperWidth;  
-float SongBarDivHeight = appHeight * 28 / paperHeight; 
-rect( SongBarDivX, SongBarDivY, SongBarDivWidth, SongBarDivHeight );
 //
