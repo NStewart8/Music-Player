@@ -30,17 +30,25 @@ float ImageDivX = beginningButtonSpace;
 float ImageDivY = appheight*4.5/20;
 float ImageDivWidth = appwidth*1/2 - beginningButtonSpace*1.5;
 float ImageDivHeight = appheight*1.5/5;
-int ImageWidth = 225;
-int ImageHeight =225;
-println (float (ImageWidth)/float (ImageHeight));
-//Div: Image
 //
-float Image2AspectRatio_GreatOne = (ImageWidth > ImageHeight) ? float(ImageWidth)/float(ImageHeight) : float(ImageHeight)/float(ImageWidth) ;
-//println("Verify Image Aspect Ratio Greater than One:", Image2AspectRatio_GreatOne>=1, "\Actual Number:", Image2AspectRatio_GreatOne);
-float ImageWidthAdjusted = ImageDivWidth;
-float ImageHeightAdjusted = (ImageWidth >= ImageDivWidth) ? ImageWidthAdjusted/Image2AspectRatio_GreatOne : ImageHeightAdjusted/Image2AspectRatio_GreatOne;
-while (ImageHeightAdjusted > ImageDivHeight) {
-ImageWidthAdjusted *= 0.99;
-}//End while
-println( "Comparison of ImageHeight and DivhHeight:", ImageHeight, ImageDivHeight);
-rect (ImageDivX, ImageDivY, ImageWidthAdjusted, ImageHeightAdjusted);
+//Image: Aspect Ratio Algorithm
+float image2AspectRation_GreatOne =  ( imageWidth2 > imageHeight2 ) ? float(imageWidth2) / float(imageHeight2) : float(imageHeight2) / float(imageWidth2 ) ; 
+float imageWidthAdjusted2 = imageDivWidth;
+if (imageWidth2 >= imageDivWidth) { 
+float imageHeightAdjusted1 = imageWidthAdjusted2 / image2AspectRation_GreatOne ;
+} else {
+float imageHeightAdjusted1 = imageWidthAdjusted2 / image2AspectRation_GreatOne ;
+}
+
+//println( float(imageWidth2)/ float(imageHeight2) );
+//Ternary Operator for As[pect Ratio: Q: greatOne v lessOne
+
+println("Verify Image Aspect Ratio Greater than One:", image2AspectRation_GreatOne>=1, "\tActual Number:", image2AspectRation_GreatOne);
+
+println("Comparison of imageHeight2 and divHeight:", imageHeight2, imageDivHeight);
+
+println("imageHeightAdjusted1", imageHeightAdjusted1);
+println("Question: is this too big?", "\t\thint ... reposition image() above rect(div)");
+// WHILE LOOP: decrease imageWidth to decrease the calculated imageHeight (% decrease within mutliplication assignment operator)
+while ( imageHeightAdjusted1 > imageDivHeight ) {
+  imageWidt imageHeightAdjusted1 = imageWidthAdjusted2 / image2AspectRation_GreatOne ;
