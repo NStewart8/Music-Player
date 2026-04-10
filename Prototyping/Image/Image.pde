@@ -23,6 +23,8 @@ PImage Image1 = loadImage(pathway1);
 //
 image(Image1, 0, 0);
 //
+int imageWidth2 = 225;
+int imageHeight2= 225;
 int numberofButtons = 13;
 int WidthofButton = appwidth/numberofButtons;
 int beginningButtonSpace = WidthofButton;
@@ -32,23 +34,16 @@ float ImageDivWidth = appwidth*1/2 - beginningButtonSpace*1.5;
 float ImageDivHeight = appheight*1.5/5;
 //
 //Image: Aspect Ratio Algorithm
-float image2AspectRation_GreatOne =  ( imageWidth2 > imageHeight2 ) ? float(imageWidth2) / float(imageHeight2) : float(imageHeight2) / float(imageWidth2 ) ; 
-float imageWidthAdjusted2 = imageDivWidth;
-if (imageWidth2 >= imageDivWidth) { 
-float imageHeightAdjusted1 = imageWidthAdjusted2 / image2AspectRation_GreatOne ;
-} else {
-float imageHeightAdjusted1 = imageWidthAdjusted2 / image2AspectRation_GreatOne ;
-}
-
-//println( float(imageWidth2)/ float(imageHeight2) );
-//Ternary Operator for As[pect Ratio: Q: greatOne v lessOne
-
+float image2AspectRation_GreatOne = ( imageWidth2 > imageHeight2 ) ? float(imageWidth2) / float(imageHeight2) : float(imageHeight2) / float(imageWidth2 ) ;
 println("Verify Image Aspect Ratio Greater than One:", image2AspectRation_GreatOne>=1, "\tActual Number:", image2AspectRation_GreatOne);
-
-println("Comparison of imageHeight2 and divHeight:", imageHeight2, imageDivHeight);
-
+float imageWidthAdjusted2 = ImageDivWidth;
+println("Comparison of ImageHeight2 and divHeight:", imageHeight2, ImageDivHeight);
+float imageHeightAdjusted1 = (imageWidth2 >= ImageDivWidth ) ?imageWidthAdjusted2 / image2AspectRation_GreatOne : imageWidthAdjusted2 * image2AspectRation_GreatOne ;
 println("imageHeightAdjusted1", imageHeightAdjusted1);
 println("Question: is this too big?", "\t\thint ... reposition image() above rect(div)");
-// WHILE LOOP: decrease imageWidth to decrease the calculated imageHeight (% decrease within mutliplication assignment operator)
-while ( imageHeightAdjusted1 > imageDivHeight ) {
-  imageWidt imageHeightAdjusted1 = imageWidthAdjusted2 / image2AspectRation_GreatOne ;
+while ( imageHeightAdjusted1 > ImageDivHeight ) {
+  imageWidthAdjusted2 *= 0.99;
+  imageHeightAdjusted1 = imageWidthAdjusted2 / image2AspectRation_GreatOne ; //CHANGE THIS
+}//End WHILE
+rect(ImageDivX, ImageDivY, ImageDivWidth, ImageDivHeight);
+//
