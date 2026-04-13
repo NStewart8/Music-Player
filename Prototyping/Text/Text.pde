@@ -1,0 +1,63 @@
+/* Text, Simple ... Hardcoded
+ */
+//
+//Display
+fullScreen();
+int appWidth = displayWidth;
+int appHeight = displayHeight;
+//
+//Population: DIVs
+int numberOfButtons = 13; //Half a button on either side as space, Center Button is Play
+int widthOfButton = appWidth/numberOfButtons;
+int beginningButtonSpace = widthOfButton;
+float quitX = appWidth - appHeight*1/20;
+float quitY = 0;
+float quitWidth = appHeight*1/20;
+float quitHeight = appHeight*1/20;
+float songTitleDivX = beginningButtonSpace;
+float songTitleDivY = appHeight*1.5/20;
+float songTitleDivWidth = appWidth*1/2 - beginningButtonSpace*1.5;
+float songTitleDivHeight = appHeight*1/10;
+float messageDIV_X = appWidth*1/2 + beginningButtonSpace*1/2;
+float messageDIV_Y = appHeight*1.5/20;
+float messageDIV_Width = appWidth*1/2 - beginningButtonSpace*1.5;
+float messageDIV_Height = appHeight*9/20;
+//
+//DIV: Image
+rect(quitX, quitY, quitWidth, quitHeight);
+rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
+rect(messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height);
+//
+//Strings, Text, Literal
+String Title = "Wahoo!";
+/* Full String longer than Rectangle, "Wahoo! I changed 2D Size."
+ - divHeight must fit the font size or text is not shown (Advanced, error check includes %-decrease)
+ - Fonts includes the in WHITE SPACE around the foreground "coloured ink"
+ - divWidth must include the font size
+ - if font is too big, wrap around happens
+ - OR full string is not drawn
+ */
+ //Fonts from OS
+ println("Start of Console"); //ERROR: in case CONSOLE Memory not enough
+ String[] fontList = PFont.list(); //To list all fonts available on system
+ printArray(fontList); //For listing all possible fonts to choose, then createFont
+ //Spelling Counts and must compare CONSOLE v Tools / Create Font / Create Font Spelling
+ //Tools / Create Font / Find Font / Do Not Press "OK", known conflict between loadFont() and createFont()
+
+//
+// Fonts from OS
+float fontSize = appHeight;
+PFont font;
+String harrington= "Harrington";
+font = createFont (harrington,fontSize);
+fill(#F216A9);
+// Aspect Ratio for Harrington
+fontSize= 48;
+float DivHeightharrington
+//
+//Drawing Text
+color BlueGreen=#42B2A4; 
+color HotPink=#F216A9;
+
+text(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
+//
