@@ -29,7 +29,7 @@ rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
 rect(messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height);
 //
 //Strings, Text, Literal
-String Title = "Wahoo!";
+String title = "Wahoo!";
 /* Full String longer than Rectangle, "Wahoo! I changed 2D Size."
  - divHeight must fit the font size or text is not shown (Advanced, error check includes %-decrease)
  - Fonts includes the in WHITE SPACE around the foreground "coloured ink"
@@ -46,18 +46,27 @@ String Title = "Wahoo!";
 
 //
 // Fonts from OS
-float fontSize = appHeight;
-PFont font;
+float fontSize1 = appHeight;
+PFont fontHarrington;
 String harrington= "Harrington";
-font = createFont (harrington,fontSize);
+//font = createFont (harrington,fontSize);
 fill(#F216A9);
 // Aspect Ratio for Harrington
-fontSize= 48;
-float DivHeightharrington
+float fontSizeHarrington = 83; //Default fontSize for ~100%
+float divHeightHarrington = songTitleDivHeight; //Key:Value, value=120
+float harringtonAspectRatio = fontSizeHarrington / divHeightHarrington; //#<1
+float textAdjustment = 0.9;
+fontSize1 = songTitleDivHeight*harringtonAspectRatio * textAdjustment;
 //
 //Drawing Text
 color BlueGreen=#42B2A4; 
 color HotPink=#F216A9;
-
-text(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
 //
+textAlign (CENTER, BASELINE); //Align X&Y, see Processing.org / Reference
+//Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
+textFont(fontHarrington, fontSize1); //must include textSize() before text() & textWidth()
+text( title, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
+//textFont(font, fontSize2); //must include textSize() before text() & textWidth()
+text( title, quitX, quitY, quitWidth, quitHeight );
+//textFont(font, fontSize3); //must include textSize() before text() & textWidth()
+text( title, messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height );
