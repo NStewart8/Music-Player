@@ -7,7 +7,7 @@ int appWidth = displayWidth;
 int appHeight = displayHeight;
 //
 //Population: DIVs
-int numberOfButtons = 13; //Half a button on either side as space, Center Button is Play
+int numberOfButtons = 13; 
 int widthOfButton = appWidth/numberOfButtons;
 int beginningButtonSpace = widthOfButton;
 float quitX = appWidth - appHeight*1/20;
@@ -37,36 +37,78 @@ String title = "Wahoo!";
  - if font is too big, wrap around happens
  - OR full string is not drawn
  */
- //Fonts from OS
+/*Fonts from OS
  println("Start of Console"); //ERROR: in case CONSOLE Memory not enough
  String[] fontList = PFont.list(); //To list all fonts available on system
  printArray(fontList); //For listing all possible fonts to choose, then createFont
  //Spelling Counts and must compare CONSOLE v Tools / Create Font / Create Font Spelling
  //Tools / Create Font / Find Font / Do Not Press "OK", known conflict between loadFont() and createFont()
-
+ */
 //
-// Fonts from OS
-float fontSize1 = appHeight;
-PFont fontHarrington;
-String harrington= "Harrington";
-//font = createFont (harrington,fontSize);
-fill(#F216A9);
-// Aspect Ratio for Harrington
-float fontSizeHarrington = 83; //Default fontSize for ~100%
-float divHeightHarrington = songTitleDivHeight; //Key:Value, value=120
-float harringtonAspectRatio = fontSizeHarrington / divHeightHarrington; //#<1
+float fontSize1 = appHeight; 
+float fontSize2 = appHeight; 
+float fontSize3 = appHeight;
+//println( fontSize );
+PFont font; 
+String Calibri = "Calibri"; 
+font = createFont(Calibri, fontSize1);
+//
+// Aspect Ratio for Calibri-48
+float fontSizeCalibri = 83; 
+float divHeightCalibri = songTitleDivHeight; 
+float CalibriAspectRatio = fontSizeCalibri / divHeightCalibri; 
 float textAdjustment = 0.9;
-fontSize1 = songTitleDivHeight*harringtonAspectRatio * textAdjustment;
+fontSize1 = songTitleDivHeight*CalibriAspectRatio * textAdjustment;
+fontSize2 = messageDIV_Height*CalibriAspectRatio * textAdjustment;
+fontSize3 = quitHeight*CalibriAspectRatio * textAdjustment;
+//println( fontSize );
 //
 //Drawing Text
-color BlueGreen=#42B2A4; 
-color HotPink=#F216A9;
+color purpleInk = #2C08FF; 
+color whiteInk = #FFFFFF; 
+color resetInk = whiteInk;
+fill(purpleInk); 
+textAlign (CENTER, CENTER); 
 //
-textAlign (CENTER, BASELINE); //Align X&Y, see Processing.org / Reference
-//Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
-textFont(fontHarrington, fontSize1); //must include textSize() before text() & textWidth()
+float constantDecrease = 0.99;
+int iWhile=0;
+textFont(font, fontSize1); //must include textSize() before text() & textWidth()
+while (textWidth(title) > songTitleDivWidth) {
+  //println("While #1"); //Demon Infinite LOOP
+  iWhile++;
+  if ( iWhile>1000 ) {
+    println("Infninte WHILE Loop");
+    exit();
+  }
+  fontSize1 *= constantDecrease;
+  textFont(font, fontSize1);
+}
 text( title, songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
-//textFont(font, fontSize2); //must include textSize() before text() & textWidth()
-text( title, quitX, quitY, quitWidth, quitHeight );
-//textFont(font, fontSize3); //must include textSize() before text() & textWidth()
+textFont(font, fontSize2); //must include textSize() before text() & textWidth()
+iWhile=0;
+while (textWidth(title) > messageDIV_Width) {
+  //println("While #1"); //Demon Infinite LOOP
+  iWhile++;
+  if ( iWhile>1000 ) {
+    println("Infninte WHILE Loop");
+    exit();
+  }
+  fontSize2 *= constantDecrease;
+  textFont(font, fontSize2);
+}
 text( title, messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height );
+textFont(font, fontSize3); //must include textSize() before text() & textWidth()
+iWhile=0;
+while (textWidth(title) > quitWidth) {
+  //println("While #1"); //Demon Infinite LOOP
+  iWhile++;
+  if ( iWhile>1000 ) {
+    println("Infninte WHILE Loop");
+    exit();
+  }
+  fontSize3 *= constantDecrease;
+  textFont(font, fontSize3);
+}
+text( title, quitX, quitY, quitWidth, quitHeight );
+fill(resetInk);
+//
