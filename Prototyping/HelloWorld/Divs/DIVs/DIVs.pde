@@ -73,5 +73,17 @@ float UnMuteDivX = DivX + DivWidth*0.166;
 float UnMuteDivY = DivY + DivHeight*0.92;
 float UnMuteDivHeight = DivHeight/9;
 ;rect( UnMuteDivX, UnMuteDivY,UnMuteDivWidth, UnMuteDivHeight );
+//
+float ExitDivWidth = DivWidth/24;
+float ExitDivX = width - ExitDivWidth; 
+float ExitDivY = 0;
+float ExitDivHeight = DivHeight/18;
+rect(ExitDivX, ExitDivY, ExitDivWidth, ExitDivHeight);
+//
+float DoubleSpeedDivWidth = DivWidth/12;
+float DoubleSpeedDivX = DivX + DivWidth*0.757;
+float DoubleSpeedDivY = DivY + DivHeight*0.92;
+float DoubleSpeedDivHeight = DivHeight/9;
+;rect( DoubleSpeedDivX, DoubleSpeedDivY,DoubleSpeedDivWidth, DoubleSpeedDivHeight );
 
 //

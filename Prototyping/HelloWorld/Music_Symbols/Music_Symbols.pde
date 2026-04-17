@@ -149,14 +149,21 @@ float UnMutecheckY3 = UnMuteDivY + UnMuteDivHeight*0.25;
 line(UnMutecheckX1, UnMutecheckY1, UnMutecheckX2, UnMutecheckY2);
 line(UnMutecheckX2, UnMutecheckY2, UnMutecheckX3, UnMutecheckY3); 
 //
+float ExitDivWidth = DivWidth/24;
+float ExitDivX = width - ExitDivWidth; 
+float ExitDivY = 0;
+float ExitDivHeight = DivHeight/18;
+rect(ExitDivX, ExitDivY, ExitDivWidth, ExitDivHeight);
+line(ExitDivX, ExitDivY, ExitDivX + ExitDivWidth, ExitDivY + ExitDivHeight); 
+line(ExitDivX + ExitDivWidth, ExitDivY, ExitDivX, ExitDivY + ExitDivHeight); 
+//
 float DoubleSpeedDivWidth = DivWidth/12;
 float DoubleSpeedDivX = DivX + DivWidth*0.757;
 float DoubleSpeedDivY = DivY + DivHeight*0.92;
 float DoubleSpeedDivHeight = DivHeight/9;
-// Set the text style
 textAlign(CENTER, CENTER);
 textSize(DoubleSpeedDivHeight * 0.8);
-fill(0); // 
-text("2X", DoubleSpeedDivX + DoubleSpeedDivWidth/2, DoubleSpeedDivY + DoubleSpeedDivHeight/2);
-
 ;rect( DoubleSpeedDivX, DoubleSpeedDivY,DoubleSpeedDivWidth, DoubleSpeedDivHeight );
+fill(#2C08FF); 
+text("2X", DoubleSpeedDivX + DoubleSpeedDivWidth/2, DoubleSpeedDivY + DoubleSpeedDivHeight/2);
+//
