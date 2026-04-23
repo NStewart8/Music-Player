@@ -38,11 +38,11 @@ songName[2] = "Ghost_Walk";
   String fileExtension_mp3 = ".mp3";
   //
   String Musicdirectory = upArrow + open + upArrow + open + dependanciesFolder + open + MusicFolder + open;
- // String SFXdirectory = upArrow + open + upArrow + open + dependanciesFolder + open + SFXFolder + open;
+  //String SFXdirectory = upArrow + open + upArrow + open + dependanciesFolder + open + SFXFolder + open;
   String pathway = Musicdirectory + songName1 + fileExtension_mp3; //TO BE Rewritten and deleted once file is LOADED
-  println(pathway);
+ println(pathway);
   playList[ currentSong ] = minim.loadFile( pathway ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
- // pathway = SFXdirectory + soundEffect1 + fileExtension_mp3; //Rewritting FILE
+  //pathway = SFXdirectory + soundEffect1 + fileExtension_mp3; //Rewritting FILE
   println(pathway);
   playList[ currentSong ] = minim.loadFile( pathway ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
   //pathway = SFXdirectory + soundEffect1 + fileExtension_mp3; //Rewritting FILE
