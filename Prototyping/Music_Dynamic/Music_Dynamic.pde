@@ -27,20 +27,24 @@ void setup() {
   String MusicFolder = "Music"; //Developer Specific
   String SFXFolder = "Sound Effects"; //Developer Specific
   String dependanciesFolder = "dependancies"; //Developer Specific
-//
-String[] songName = new String[numberofSongs];
-songName[0]= "Beat_Your_Competition";
-songName[1]= "groove";
-songName[2] = "Ghost_Walk";
-
+  //
+  String[] songName = new String[numberofSongs];
+  songName[currentSong] = "Beat_Your_Competition";
+  currentSong++;
+  songName[currentSong] = "Ghost_Walk";
+  currentSong++;
+  songName[currentSong] = "groove";
+  currentSong++;
+  currentSong=0;
+  //
   String songName1 = "groove";
-  String soundEffect1 = "Spring_Attic_Door";
+  //String soundEffect1 = "Spring_Attic_Door";
   String fileExtension_mp3 = ".mp3";
   //
   String Musicdirectory = upArrow + open + upArrow + open + dependanciesFolder + open + MusicFolder + open;
   //String SFXdirectory = upArrow + open + upArrow + open + dependanciesFolder + open + SFXFolder + open;
   String pathway = Musicdirectory + songName1 + fileExtension_mp3; //TO BE Rewritten and deleted once file is LOADED
- println(pathway);
+  println(pathway);
   playList[ currentSong ] = minim.loadFile( pathway ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
   //pathway = SFXdirectory + soundEffect1 + fileExtension_mp3; //Rewritting FILE
   println(pathway);
@@ -49,22 +53,24 @@ songName[2] = "Ghost_Walk";
   println(pathway);
   soundEffects[currentSong] = minim.loadFile( pathway ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
   //
-  if ( playList[currentSong]==null || soundEffects[currentSong]==null ) { //ERROR, play list is NULL
-    //See FILE or minim.loadFile
-    println("The Play List or Sound Effects did not load properly");
-    printArray(playList);
-    printArray(soundEffects);
-    /*
-  println("Music Pathway", musicDirectory);
-     println("Full Music File Pathway", file);
-     */
-  } else {
-    playList[currentSong].loop();
-    printArray(playList);
+  for ( int i=0; i<numberofSongs; i++ ) {
+    if ( playList[i]==null ) { //ERROR, play list is NULL
+      //See FILE or minim.loadFile
+      println("The Play List did not load properly");
+      printArray(playList);
+      exit();
+    }
   }
+  if ( soundEffects[currentSong]==null ) { //ERROR, play list is NULL
+    println("The Sound Effects did not load properly");
+    printArray(soundEffects);
+    exit();
+  }
+  //
 }//End Setup
 //
 void draw() {
+  playList[currentSong].play();
 }//End Draw
 //
 void mousePressed() {
