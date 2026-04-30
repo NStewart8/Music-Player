@@ -15,6 +15,9 @@ AudioMetaData[] playListMetaData = new AudioMetaData[ numberofSongs ];
 AudioPlayer[] soundEffects = new AudioPlayer [numberofSoundEffects];
 int currentSong = numberofSongs - numberofSongs; //ZERO, Math Property
 //
+float (songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
+color purpleInk, resetInk;
+//
 void setup() {
   //Display
   size(700, 500);
@@ -108,6 +111,7 @@ void setup() {
   color whiteInk = #FFFFFF; //Grey Scale is 255
   color resetInk = whiteInk;
   fill(purpleInk); //Ink, hexidecimal copied from Color Selector
+  rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
   //Grey Scale 0-255
   textAlign (CENTER, CENTER); //Align X&Y, see Processing.org / Reference
   //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
@@ -136,8 +140,9 @@ void setup() {
 //
 void draw() {
   playList[currentSong].play();
+  rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
   //soundEffects[currentSong].play();
-}//End Draw
+}; //End Draw
 //
 void mousePressed() {
 }//End Mouse Pressed
