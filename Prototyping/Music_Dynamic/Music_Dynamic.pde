@@ -26,7 +26,7 @@ void setup() {
   fullScreen(); //DisplayWidth //DisplayHeight
   int appWidth = width;
   int appHeight = height;
-}
+
 //
 int numberOfButtons = 13; //Half a button on either side as space, Center Button is Play
 int widthOfButton = appWidth/numberOfButtons;
@@ -43,11 +43,11 @@ float messageDIV_X = appWidth*1/2 + beginningButtonSpace*1/2;
 float messageDIV_Y = appHeight*1.5/20;
 float messageDIV_Width = appWidth*1/2 - beginningButtonSpace*1.5;
 float messageDIV_Height = appHeight*9/20;
-//
-//DIV: rect()
 rect(quitX, quitY, quitWidth, quitHeight);
 rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
 rect(messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height);
+}
+//
 //
 //
 
