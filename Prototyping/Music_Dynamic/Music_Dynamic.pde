@@ -6,14 +6,14 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 
 //
-//Global Variable
-Minim minim; //intiates entire class
-int numberofSongs = 3;
-int numberofSoundEffects = 1;
-AudioPlayer[] playList = new AudioPlayer [numberofSongs];
-AudioMetaData[] playListMetaData = new AudioMetaData[ numberofSongs ];
-AudioPlayer[] soundEffects = new AudioPlayer [numberofSoundEffects];
-int currentSong = numberofSongs - numberofSongs; //ZERO, Math Property
+//Global Variables
+Minim minim;  //initates entire class
+int numberOfSongs = 8; //Best Practcie
+int numberOfSoundEffect = 1;
+AudioPlayer[] playList = new AudioPlayer[ numberOfSongs ];
+AudioMetaData[] playListMetaData = new AudioMetaData[ numberOfSongs ];
+AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffect ];
+int currentSong = numberOfSongs - numberOfSongs; //ZERO, Math Property
 //
 float songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight;
 color purpleInk, resetInk;
@@ -23,135 +23,167 @@ float fontSize1, fontSize2, fontSize3;
 PFont font;
 //
 void setup() {
-  fullScreen(); //DisplayWidth //DisplayHeight
-  int appWidth = width;
+  //Display
+  size( 700, 500 ); //width //height
+  //fullScreen();  //displayWidth //displayHeight
+  int appWidth = width; //Best Practice
   int appHeight = height;
-
-//
-int numberOfButtons = 13; //Half a button on either side as space, Center Button is Play
-int widthOfButton = appWidth/numberOfButtons;
-int beginningButtonSpace = widthOfButton;
-float quitX = appWidth - appHeight*1/20;
-float quitY = 0;
-float quitWidth = appHeight*1/20;
-float quitHeight = appHeight*1/20;
-float songTitleDivX = beginningButtonSpace;
-float songTitleDivY = appHeight*1.5/20;
-float songTitleDivWidth = appWidth*1/2 - beginningButtonSpace*1.5;
-float songTitleDivHeight = appHeight*1/10;
-float messageDIV_X = appWidth*1/2 + beginningButtonSpace*1/2;
-float messageDIV_Y = appHeight*1.5/20;
-float messageDIV_Width = appWidth*1/2 - beginningButtonSpace*1.5;
-float messageDIV_Height = appHeight*9/20;
-rect(quitX, quitY, quitWidth, quitHeight);
-rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
-rect(messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height);
-}
-//
-//
-//
-
-//
-minim = new Minim(this); //Manditory
-String upArrow = "..";
-String open = "/";
-String MusicFolder = "Music"; //Developer Specific
-String SFXFolder = "SFX"; //Developer Specific
-String dependanciesFolder = "dependancies"; //Developer Specific
-//
-String[] songName = new String[numberofSongs];
-songName[currentSong] = "Beat_Your_Competition";
-currentSong++;
-songName[currentSong] = "Ghost_Walk";
-currentSong++;
-songName[currentSong] = "groove";
-currentSong++;
-currentSong=0;
-//
-String songName1 = "groove";
-String soundEffect1 = "Spring_Attic_Door";
-String fileExtension_mp3 = ".mp3";
-//
-String Musicdirectory = upArrow + open + upArrow + open + dependanciesFolder + open + MusicFolder + open;
-String SFXdirectory = upArrow + open + upArrow + open + dependanciesFolder + open + SFXFolder + open;
-String pathway;
-for ( int i=0; i<numberofSongs; i++ ) {
   //
-  pathway = Musicdirectory + songName[i] + fileExtension_mp3;
-  playList[ i ] = minim.loadFile( pathway );
-  playListMetaData[ i ] = playList[ i ].getMetaData();
-}
-pathway = SFXdirectory + soundEffect1 + fileExtension_mp3; //Rewritting FILE
-soundEffects[currentSong] = minim.loadFile( pathway ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
-//
-for ( int i=0; i<numberofSongs; i++ ) {
-  if ( playList[i]==null ) { //ERROR, play list is NULL
-    //See FILE or minim.loadFile
-    println("The Play List did not load properly");
-    printArray(playList);
+  //DIVs, Population
+  int numberOfButtons = 13; //Half a button on either side as space, Center Button is Play
+  int widthOfButton = appWidth/numberOfButtons;
+  int beginningButtonSpace = widthOfButton;
+  float quitX = appWidth - appHeight*1/20;
+  float quitY = 0;
+  float quitWidth = appHeight*1/20;
+  float quitHeight = appHeight*1/20;
+  songTitleDivX = beginningButtonSpace;
+  songTitleDivY = appHeight*1.5/20;
+  songTitleDivWidth = appWidth*1/2 - beginningButtonSpace*1.5;
+  songTitleDivHeight = appHeight*1/10;
+  float messageDIV_X = appWidth*1/2 + beginningButtonSpace*1/2;
+  float messageDIV_Y = appHeight*1.5/20;
+  float messageDIV_Width = appWidth*1/2 - beginningButtonSpace*1.5;
+  float messageDIV_Height = appHeight*9/20;
+  //
+  //DIV: rect()
+  rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
+  rect(messageDIV_X, messageDIV_Y, messageDIV_Width, messageDIV_Height);
+  rect(quitX, quitY, quitWidth, quitHeight);
+  //
+  //Music Loading - STRUCTURED Review
+  minim = new Minim(this); //Manditory
+  String upArrow = "..";
+  String open = "/";
+String MusicFolder = "Music"; //Developer Specific
+String SFXFolder = "Sound Effects"; //Developer Specific
+String dependanciesFolder = "dependancies"; //Developer Specific
+  //
+  String[] songName = new String[numberOfSongs];
+  songName[currentSong] = "Beat_Your_Competition";
+  currentSong++;
+  songName[currentSong] = "Ghost_Walk";
+  currentSong++;
+  songName[currentSong] = "groove";
+  currentSong=0;
+  //
+  /* Alternate Song Name Text
+   String songName1 = "groove";
+   String songName2 = "Beat_Your_Competition";
+   String songName3 = "Cycles";
+   String ongName4 = "Eureka";
+   String ongName5 = "Ghost_Walk";
+   String ongName7 = "Newsroom";
+   String ongName8 = "Start_Your_Engines";
+   String ongName9 = "The_Simplest";
+   */
+  String soundEffect1 = "Car_Door_Closing";
+  String fileExtension_mp3 = ".mp3";
+  //
+  //CAUTION: Mistakes Below
+  String Musicdirectory = upArrow + open + upArrow + open + dependanciesFolder + open + MusicFolder + open ; //Concatenation
+  String SFXdirectory = upArrow + open + upArrow + open + dependanciesFolder + open + SFXFolder + open ; //Concatenation
+  String pathway;
+  for ( int i=0; i<numberOfSongs; i++ ) {
+    //CAUTION: removed ReadMe.txt
+    pathway = Musicdirectory + songName[i] + fileExtension_mp3; //TO BE Rewritten and deleted once file is LOADED
+    playList[ i ] = minim.loadFile( pathway ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+    playListMetaData = new AudioMetaData[numberOfSongs]; // Replace with your actual count
+
+    //CAUTION: not currentSong var
+  }
+  pathway = SFXdirectory + soundEffect1 + fileExtension_mp3; //Rewritting FILE
+  soundEffects[currentSong] = minim.loadFile( pathway ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+  //
+  for ( int i=0; i<numberOfSongs; i++ ) {
+    if ( playList[i]==null ) { //ERROR, play list is NULL
+      //See FILE or minim.loadFile
+      println("The Play List did not load properly");
+      printArray(playList);
+      exit();
+    }
+  }
+  if ( soundEffects[currentSong]==null ) { //ERROR, play list is NULL
+    println("The Sound Effects did not load properly");
+    printArray(soundEffects);
     exit();
   }
-}
-if ( soundEffects[currentSong]==null ) { //ERROR, play list is NULL
-  println("The Sound Effects did not load properly");
-  printArray(soundEffects);
-  exit();
-}
-
-String x = "X";
-//
-// Fonts from OS
-//rect(height) is biggest font is word is the smallest
-float fontSize1 = songTitleDivHeight; //1:1 Font Height to rectHeight
-float fontSize2 = messageDIV_Height;
-float fontSize3 = quitHeight;
-PFont font; //Font Varaible Name, able to have more than one Font
-String Calibri = "Calibri"; //Spelling of the Font Matters, see PFont.list() v Create Font above
-font = createFont(Calibri, fontSize1);
-//
-//Drawing Text
-color purpleInk = #2C08FF; //AP MiniLesson on bit, 8-bit or byte (grey scale, 256), colour
-color whiteInk = #FFFFFF; //Grey Scale is 255
-color resetInk = whiteInk;
-fill(purpleInk); //Ink, hexidecimal copied from Color Selector
-rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
-//Grey Scale 0-255
-textAlign (CENTER, CENTER); //Align X&Y, see Processing.org / Reference
-//Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
-//
-// Procedure Passing RECT(#2) && fontSize(RECT#)
-float constantDecrease = 0.99;
-int iWhile=0;
-textFont(font, fontSize1); //must include textSize() before text() & textWidth()
-while ( textWidth(playListMetaData[currentSong].title()) > songTitleDivWidth ) {
-  //println("While #1"); //Infinite WHILE Check
-  iWhile++;
-  if ( iWhile>10000 ) { //>1000 means -1 text or i
-    println("Infninte WHILE Loop");
-    exit();
+  //
+  /*Fonts from OS
+   println("Start of Console"); //ERROR: in case CONSOLE Memory not enough
+   String[] fontList = PFont.list(); //To list all fonts available on system
+   printArray(fontList); //For listing all possible fonts to choose, then createFont
+   //Spelling Counts and must compare CONSOLE v Tools / Create Font / Create Font Spelling
+   //Tools / Create Font / Find Font / Do Not Press "OK", known conflict between loadFont() and createFont()
+   */
+  // Students enter all text from Case Study
+  String x = "X";
+  //
+  // Fonts from OS
+  //rect(height) is biggest font is word is the smallest
+  fontSize1 = songTitleDivHeight; //1:1 Font Height to rectHeight
+  fontSize2 = messageDIV_Height;
+  fontSize3 = quitHeight;
+  //PFont font; //Font Varaible Name, able to have more than one Font
+  String harrington = "Harrington"; //Spelling of the Font Matters, see PFont.list() v Create Font above
+  font = createFont(harrington, fontSize1);
+  //
+  //Drawing Text
+  purpleInk = #2C08FF; //AP MiniLesson on bit, 8-bit or byte (grey scale, 256), colour
+  color whiteInk = #FFFFFF; //Grey Scale is 255
+  resetInk = whiteInk;
+  fill(purpleInk); //Ink, hexidecimal copied from Color Selector
+  //Grey Scale 0-255
+  textAlign (CENTER, CENTER); //Align X&Y, see Processing.org / Reference
+  //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
+  //
+  // Procedure Passing RECT(#2) && fontSize(RECT#)
+  float constantDecrease = 0.99;
+  int iWhile=0;
+  textFont(font, fontSize1); //must include textSize() before text() & textWidth()
+  while ( textWidth(playListMetaData[currentSong].title()) > songTitleDivWidth ) {
+    //println("While #1"); //Infinite WHILE Check
+    iWhile++;
+    if ( iWhile>10000 ) { //>1000 means -1 text or i
+      println("Infninte WHILE Loop");
+      exit();
+    }
+    fontSize1 *= constantDecrease;
+    textFont(font, fontSize1);
   }
-  fontSize1 *= constantDecrease;
-  textFont(font, fontSize1);
-}
-text( playListMetaData[currentSong].title(), songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
-//
-
-
-
-//
+  text( playListMetaData[currentSong].title(), songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
+  fill(resetInk);
+  //
+  //playList[currentSong].play();
+  //soundEffects[currentSong].play();
+  //
 }//End Setup
 //
 void draw() {
-  playList[currentSong].play();
   rect(songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
-  //soundEffects[currentSong].play();
-}; //End Draw
+  fontSize1 = songTitleDivHeight;
+  constantDecrease = 0.99;
+  iWhile=0;
+  textFont(font, fontSize1); //must include textSize() before text() & textWidth()
+  while ( textWidth(playListMetaData[currentSong].title()) > songTitleDivWidth ) {
+    //println("While #1"); //Infinite WHILE Check
+    iWhile++;
+    if ( iWhile>10000 ) { //>1000 means -1 text or i
+      println("Infninte WHILE Loop");
+      exit();
+    }
+    fontSize1 *= constantDecrease;
+    textFont(font, fontSize1);
+  }
+  fill(purpleInk);
+  text( playListMetaData[currentSong].title(), songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
+  fill(resetInk); //
+}//End Draw
 //
 void mousePressed() {
 }//End Mouse Pressed
 //
 void keyPressed() {
-
   /* Simple Play
    playList[currentSong].play();
    currentSong++;
@@ -244,7 +276,7 @@ void keyPressed() {
       playList[currentSong].pause();
       playList[currentSong].rewind();
       //
-      if ( currentSong==numberofSongs-1 ) {
+      if ( currentSong==numberOfSongs-1 ) {
         currentSong = 0;
       } else {
         currentSong++;
@@ -254,7 +286,7 @@ void keyPressed() {
       //
       playList[currentSong].rewind();
       //
-      if ( currentSong==numberofSongs-1 ) {
+      if ( currentSong==numberOfSongs-1 ) {
         currentSong = 0;
       } else {
         currentSong++;
@@ -265,7 +297,7 @@ void keyPressed() {
   }
   //if ( key=='B' || key=='b' ) ; // Previous, Back //Students to finish
   //
-  if ( key=='Y' || key=='y' ) currentSong = int(random(numberofSongs)); //random(0, numberofSongs)
+  if ( key=='Y' || key=='y' ) currentSong = int(random(numberOfSongs)); //random(0, numberOfSongs)
   //
   //if ( key=='S' || key=='s' ) ; // Shuffle - PLAY (Random)
   //Note: will randomize the currentSong number
@@ -278,3 +310,4 @@ void keyPressed() {
   //
 }//End Key Pressed
 //
+//End MAIN Program
