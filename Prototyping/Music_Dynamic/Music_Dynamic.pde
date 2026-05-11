@@ -8,7 +8,7 @@ import ddf.minim.ugens.*;
 //
 //Global Variables
 Minim minim;  //initates entire class
-int numberOfSongs = 8; //Best Practcie
+int numberOfSongs = 3; //Best Practcie
 int numberOfSoundEffect = 1;
 AudioPlayer[] playList = new AudioPlayer[ numberOfSongs ];
 AudioMetaData[] playListMetaData = new AudioMetaData[ numberOfSongs ];
@@ -55,9 +55,9 @@ void setup() {
   minim = new Minim(this); //Manditory
   String upArrow = "..";
   String open = "/";
-String MusicFolder = "Music"; //Developer Specific
-String SFXFolder = "Sound Effects"; //Developer Specific
-String dependanciesFolder = "dependancies"; //Developer Specific
+  String MusicFolder = "Music"; //Developer Specific
+  String SFXFolder = "Sound Effects"; //Developer Specific
+  String dependanciesFolder = "dependancies"; //Developer Specific
   //
   String[] songName = new String[numberOfSongs];
   songName[currentSong] = "Beat_Your_Competition";
@@ -84,13 +84,16 @@ String dependanciesFolder = "dependancies"; //Developer Specific
   String Musicdirectory = upArrow + open + upArrow + open + dependanciesFolder + open + MusicFolder + open ; //Concatenation
   String SFXdirectory = upArrow + open + upArrow + open + dependanciesFolder + open + SFXFolder + open ; //Concatenation
   String pathway;
+  playListMetaData = new AudioMetaData[numberOfSongs];
   for ( int i=0; i<numberOfSongs; i++ ) {
     //CAUTION: removed ReadMe.txt
     pathway = Musicdirectory + songName[i] + fileExtension_mp3; //TO BE Rewritten and deleted once file is LOADED
-    playList[ i ] = minim.loadFile( pathway ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
-    playListMetaData = new AudioMetaData[numberOfSongs]; // Replace with your actual count
-
+    playList[i] = minim.loadFile( pathway ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+     // Replace with your actual count
+  if (playList[i] != null) {
+    playListMetaData[i] = playList[i].getMetaData();
     //CAUTION: not currentSong var
+  }
   }
   pathway = SFXdirectory + soundEffect1 + fileExtension_mp3; //Rewritting FILE
   soundEffects[currentSong] = minim.loadFile( pathway ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
@@ -117,7 +120,7 @@ String dependanciesFolder = "dependancies"; //Developer Specific
    //Tools / Create Font / Find Font / Do Not Press "OK", known conflict between loadFont() and createFont()
    */
   // Students enter all text from Case Study
-  String x = "X";
+  //String x = "X";
   //
   // Fonts from OS
   //rect(height) is biggest font is word is the smallest
@@ -125,8 +128,8 @@ String dependanciesFolder = "dependancies"; //Developer Specific
   fontSize2 = messageDIV_Height;
   fontSize3 = quitHeight;
   //PFont font; //Font Varaible Name, able to have more than one Font
-  String harrington = "Harrington"; //Spelling of the Font Matters, see PFont.list() v Create Font above
-  font = createFont(harrington, fontSize1);
+  String calibri = "Calibri"; //Spelling of the Font Matters, see PFont.list() v Create Font above
+  font = createFont(calibri, fontSize1);
   //
   //Drawing Text
   purpleInk = #2C08FF; //AP MiniLesson on bit, 8-bit or byte (grey scale, 256), colour
@@ -142,7 +145,7 @@ String dependanciesFolder = "dependancies"; //Developer Specific
   int iWhile=0;
   textFont(font, fontSize1); //must include textSize() before text() & textWidth()
   while ( textWidth(playListMetaData[currentSong].title()) > songTitleDivWidth ) {
-    //println("While #1"); //Infinite WHILE Check
+    println("While #1"); //Infinite WHILE Check
     iWhile++;
     if ( iWhile>10000 ) { //>1000 means -1 text or i
       println("Infninte WHILE Loop");
@@ -154,7 +157,7 @@ String dependanciesFolder = "dependancies"; //Developer Specific
   text( playListMetaData[currentSong].title(), songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
   fill(resetInk);
   //
-  //playList[currentSong].play();
+  playList[currentSong].play();
   //soundEffects[currentSong].play();
   //
 }//End Setup
@@ -166,7 +169,7 @@ void draw() {
   iWhile=0;
   textFont(font, fontSize1); //must include textSize() before text() & textWidth()
   while ( textWidth(playListMetaData[currentSong].title()) > songTitleDivWidth ) {
-    //println("While #1"); //Infinite WHILE Check
+    println("While #1"); //Infinite WHILE Check
     iWhile++;
     if ( iWhile>10000 ) { //>1000 means -1 text or i
       println("Infninte WHILE Loop");
