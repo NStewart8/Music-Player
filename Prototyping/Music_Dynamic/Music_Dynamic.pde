@@ -145,6 +145,10 @@ void setup() {
   int iWhile=0;
   textFont(font, fontSize1); //must include textSize() before text() & textWidth()
   while ( textWidth(playListMetaData[currentSong].title()) > songTitleDivWidth ) {
+   String title = playListMetaData[currentSong].title();
+if (title == null || title.equals("")) {
+  title = "Unknown Title"; // Fallback so the loop doesn't break
+}
     println("While #1"); //Infinite WHILE Check
     iWhile++;
     if ( iWhile>10000 ) { //>1000 means -1 text or i
@@ -155,6 +159,10 @@ void setup() {
     textFont(font, fontSize1);
   }
   text( playListMetaData[currentSong].title(), songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
+ String title = playListMetaData[currentSong].title();
+ if (title == null || title.equals("")) {
+  title = "Unknown Title"; // Fallback so the loop doesn't break
+}
   fill(resetInk);
   //
   playList[currentSong].play();
@@ -169,6 +177,10 @@ void draw() {
   iWhile=0;
   textFont(font, fontSize1); //must include textSize() before text() & textWidth()
   while ( textWidth(playListMetaData[currentSong].title()) > songTitleDivWidth ) {
+   String title = playListMetaData[currentSong].title();
+if (title == null || title.equals("")) {
+  title = "Unknown Title"; // Fallback so the loop doesn't break
+} 
     println("While #1"); //Infinite WHILE Check
     iWhile++;
     if ( iWhile>10000 ) { //>1000 means -1 text or i
@@ -180,6 +192,10 @@ void draw() {
   }
   fill(purpleInk);
   text( playListMetaData[currentSong].title(), songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight );
+  String title = playListMetaData[currentSong].title();
+if (title == null || title.equals("")) {
+  title = "Unknown Title"; // Fallback so the loop doesn't break
+}
   fill(resetInk); //
 }//End Draw
 //
