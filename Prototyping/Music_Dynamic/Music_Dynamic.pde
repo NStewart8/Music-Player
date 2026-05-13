@@ -7,13 +7,13 @@ import ddf.minim.ugens.*;
 
 //
 //Global Variables
-Minim minim;  //initates entire class
-int numberOfSongs = 3; //Best Practcie
+Minim minim;  
+int numberOfSongs = 3;
 int numberOfSoundEffect = 1;
 AudioPlayer[] playList = new AudioPlayer[ numberOfSongs ];
 AudioMetaData[] playListMetaData = new AudioMetaData[ numberOfSongs ];
 AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffect ];
-int currentSong = numberOfSongs - numberOfSongs; //ZERO, Math Property
+int currentSong = numberOfSongs - numberOfSongs; 
 //
 float songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight;
 color purpleInk, resetInk;
@@ -67,83 +67,69 @@ void setup() {
   songName[currentSong] = "groove";
   currentSong=0;
   //
-  /* Alternate Song Name Text
-   String songName1 = "groove";
-   String songName2 = "Beat_Your_Competition";
-   String songName3 = "Cycles";
-   String ongName4 = "Eureka";
-   String ongName5 = "Ghost_Walk";
-   String ongName7 = "Newsroom";
-   String ongName8 = "Start_Your_Engines";
-   String ongName9 = "The_Simplest";
-   */
   String soundEffect1 = "Car_Door_Closing";
   String fileExtension_mp3 = ".mp3";
   //
-  //CAUTION: Mistakes Below
   String Musicdirectory = upArrow + open + upArrow + open + dependanciesFolder + open + MusicFolder + open ; //Concatenation
   String SFXdirectory = upArrow + open + upArrow + open + dependanciesFolder + open + SFXFolder + open ; //Concatenation
   String pathway;
   playListMetaData = new AudioMetaData[numberOfSongs];
   for ( int i=0; i<numberOfSongs; i++ ) {
-    //CAUTION: removed ReadMe.txt
     pathway = Musicdirectory + songName[i] + fileExtension_mp3; //TO BE Rewritten and deleted once file is LOADED
-    playList[i] = minim.loadFile( pathway ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+    playList[i] = minim.loadFile( pathway ); 
      // Replace with your actual count
   if (playList[i] != null) {
     playListMetaData[i] = playList[i].getMetaData();
-    //CAUTION: not currentSong var
   }
   }
   pathway = SFXdirectory + soundEffect1 + fileExtension_mp3; //Rewritting FILE
   soundEffects[currentSong] = minim.loadFile( pathway ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
   //
   for ( int i=0; i<numberOfSongs; i++ ) {
-    if ( playList[i]==null ) { //ERROR, play list is NULL
-      //See FILE or minim.loadFile
+    if ( playList[i]==null ) { 
       println("The Play List did not load properly");
       printArray(playList);
       exit();
     }
   }
-  if ( soundEffects[currentSong]==null ) { //ERROR, play list is NULL
+  if ( soundEffects[currentSong]==null ) { 
     println("The Sound Effects did not load properly");
     printArray(soundEffects);
     exit();
   }
   //
-  /*Fonts from OS
+ // Fonts from OS
    println("Start of Console"); //ERROR: in case CONSOLE Memory not enough
    String[] fontList = PFont.list(); //To list all fonts available on system
    printArray(fontList); //For listing all possible fonts to choose, then createFont
    //Spelling Counts and must compare CONSOLE v Tools / Create Font / Create Font Spelling
    //Tools / Create Font / Find Font / Do Not Press "OK", known conflict between loadFont() and createFont()
-   */
+  
   // Students enter all text from Case Study
-  //String x = "X";
+  String x = "X";
   //
   // Fonts from OS
-  //rect(height) is biggest font is word is the smallest
+  //rect(height)
   fontSize1 = songTitleDivHeight; //1:1 Font Height to rectHeight
   fontSize2 = messageDIV_Height;
   fontSize3 = quitHeight;
-  //PFont font; //Font Varaible Name, able to have more than one Font
-  String calibri = "Calibri"; //Spelling of the Font Matters, see PFont.list() v Create Font above
+  PFont font; 
+  String calibri = "Calibri";  
   font = createFont(calibri, fontSize1);
   //
   //Drawing Text
-  purpleInk = #2C08FF; //AP MiniLesson on bit, 8-bit or byte (grey scale, 256), colour
-  color whiteInk = #FFFFFF; //Grey Scale is 255
+  purpleInk = #2C08FF; 
+  color whiteInk = #FFFFFF; 
   resetInk = whiteInk;
-  fill(purpleInk); //Ink, hexidecimal copied from Color Selector
+  fill(purpleInk); 
   //Grey Scale 0-255
-  textAlign (CENTER, CENTER); //Align X&Y, see Processing.org / Reference
+  textAlign (CENTER, CENTER); 
   //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
   //
   // Procedure Passing RECT(#2) && fontSize(RECT#)
   float constantDecrease = 0.99;
   int iWhile=0;
-  textFont(font, fontSize1); //must include textSize() before text() & textWidth()
+  textFont(font, fontSize1);
   while ( textWidth(playListMetaData[currentSong].title()) > songTitleDivWidth ) {
    String title = playListMetaData[currentSong].title();
 if (title == null || title.equals("")) {
@@ -175,18 +161,20 @@ void draw() {
   fontSize1 = songTitleDivHeight;
   constantDecrease = 0.99;
   iWhile=0;
-  textFont(font, fontSize1); //must include textSize() before text() & textWidth()
+  textFont(font, fontSize1); 
   while ( textWidth(playListMetaData[currentSong].title()) > songTitleDivWidth ) {
    String title = playListMetaData[currentSong].title();
 if (title == null || title.equals("")) {
   title = "Unknown Title"; // Fallback so the loop doesn't break
 } 
+  /* 
     println("While #1"); //Infinite WHILE Check
     iWhile++;
     if ( iWhile>10000 ) { //>1000 means -1 text or i
       println("Infninte WHILE Loop");
       exit();
     }
+    */
     fontSize1 *= constantDecrease;
     textFont(font, fontSize1);
   }
