@@ -18,26 +18,25 @@ float DivY = appHeight * 1/4;
 float DivWidth = appWidth * 1/2;
 float DivHeight = appHeight * 1/2;
 //
-String upArow = "..";
-String dependenciesFolder = "dependancies"
-  ;
-String ImagesFolder = "Images";
-String ImageName = "image"
-  ;
-String fileExtension = ".jpg"
-  ;
-String open = "/";
-//
 //Concatinate
-// Note, Cut Out, see Absolute Pathway: \\Users\N.stewart8\Documents\GitHub\Music-Player\Dependencies\Images
-//see Absolute Pathway: Dependencies/Images
+//
+//DIVs Population using unitless ratios (i.e. millimeters to pixels)
+//See Case Study
+//
+//Directory or Pathway to Images
+//String-Vars of Folders and File Names
+String upArow = "..";
+String dependenciesFolder = "dependancies";
+String ImagesFolder = "Images";
+String ImageName = "image";
+String fileExtension = ".jpg";
+String open = "/";
+//Concatenation of Pathways
 String imageDirectory = upArow + open + upArow + open + dependenciesFolder + open + ImagesFolder + open;
 String pathway1 = imageDirectory + ImageName + fileExtension;
 println(pathway1);
+//PImage Vars + Diensions (width & height)
 PImage Image1 = loadImage(pathway1);
-//
-image(Image1, 0, 0);
-//
 int imageWidth2 = 225;
 int imageHeight2= 225;
 int numberofButtons = 13;
@@ -47,23 +46,9 @@ float ImageDivX = beginningButtonSpace;
 float ImageDivY = appHeight*4.5/20;
 float ImageDivWidth = appWidth*1/2 - beginningButtonSpace*1.5;
 float ImageDivHeight = appHeight*1.5/5;
-rect(ImageDivX, ImageDivY, ImageDivWidth, ImageDivHeight);
-//
-//
-//DIVs Population using unitless ratios (i.e. millimeters to pixels)
-//See Case Study
-//
-//Directory or Pathway to Images
-//String-Vars of Folders and File Names
-//Concatenation of Pathways
-//PImage Vars + Diensions (width & height)
 //
 //DIVs
-float SongTitleDivWidth = appWidth * 0.5;
-float SongTitleDivX = (appWidth / 2) - (SongTitleDivWidth / 2);
-float SongTitleDivY = 0;
-float SongTitleDivHeight = appHeight * 0.1;
-rect( SongTitleDivX, SongTitleDivY, SongTitleDivWidth, SongTitleDivHeight );
+
 //
 float PlayButtonDivWidth = DivWidth/9;
 float PlayButtonDivX = DivX + DivWidth*0.814;
@@ -71,40 +56,35 @@ float PlayButtonDivY = DivY + DivHeight*0.645;
 float PlayButtonDivHeight = DivHeight/6;
 rect( PlayButtonDivX, PlayButtonDivY, PlayButtonDivWidth, PlayButtonDivHeight );
 //
-;
 float ScreenDivX = DivX + DivWidth*3/16;
 float ScreenDivY = DivY + DivHeight*3/16;
 float ScreenDivWidth = DivX + DivWidth*3/24;
 float ScreenDivHeight= DivY + DivHeight*3/24;
-;
 rect( ScreenDivX, ScreenDivY, ScreenDivWidth, ScreenDivHeight );
+
 //
 float PrevSongDivWidth = DivWidth/12;
 float PrevSongDivX = DivX + DivWidth*0.250;
 float PrevSongDivY = DivY + DivHeight*0.92;
 float PrevSongDivHeight = DivHeight/9;
-;
 rect( PrevSongDivX, PrevSongDivY, PrevSongDivWidth, PrevSongDivHeight );
 //
 float BackTenDivWidth = DivWidth/12;
 float BackTenDivX = DivX + DivWidth*0.335;
 float BackTenDivY = DivY + DivHeight*0.92;
 float BackTenDivHeight = DivHeight/9;
-;
 rect( BackTenDivX, BackTenDivY, BackTenDivWidth, BackTenDivHeight );
 //
 float PauseDivWidth = DivWidth/12;
 float PauseDivX = DivX + DivWidth*0.419;
 float PauseDivY = DivY + DivHeight*0.92;
 float PauseDivHeight = DivHeight/9;
-;
 rect( PauseDivX, PauseDivY, PauseDivWidth, PauseDivHeight );
 //
 float SkipSongDivWidth = DivWidth/12;
 float SkipSongDivX = DivX + DivWidth*0.504;
 float SkipSongDivY = DivY + DivHeight*0.92;
 float SkipSongDivHeight = DivHeight/9;
-;
 rect( SkipSongDivX, SkipSongDivY, SkipSongDivWidth, SkipSongDivHeight );
 
 //
@@ -112,21 +92,18 @@ float muteDivWidth = DivWidth/12;
 float muteDivX = DivX + DivWidth*0.588;
 float muteDivY = DivY + DivHeight*0.92;
 float muteDivHeight = DivHeight/9;
-;
 rect( muteDivX, muteDivY, muteDivWidth, muteDivHeight );
 //
 float ShuffleeDivWidth = DivWidth/12;
 float ShuffleeDivX = DivX + DivWidth*0.672;
 float ShuffleeDivY = DivY + DivHeight*0.92;
 float ShuffleeDivHeight = DivHeight/9;
-;
 rect( ShuffleeDivX, ShuffleeDivY, ShuffleeDivWidth, ShuffleeDivHeight );
 //
 float UnMuteDivWidth = DivWidth/12;
 float UnMuteDivX = DivX + DivWidth*0.166;
 float UnMuteDivY = DivY + DivHeight*0.92;
 float UnMuteDivHeight = DivHeight/9;
-;
 rect( UnMuteDivX, UnMuteDivY, UnMuteDivWidth, UnMuteDivHeight );
 //
 float ExitDivWidth = DivWidth/24;
@@ -139,7 +116,6 @@ float DoubleSpeedDivWidth = DivWidth/12;
 float DoubleSpeedDivX = DivX + DivWidth*0.757;
 float DoubleSpeedDivY = DivY + DivHeight*0.92;
 float DoubleSpeedDivHeight = DivHeight/9;
-;
 rect( DoubleSpeedDivX, DoubleSpeedDivY, DoubleSpeedDivWidth, DoubleSpeedDivHeight );
 //
 float MoveX =750f;
@@ -155,15 +131,12 @@ triangle(PlayButtonDivX1, PlayButtonDivY2, PlayButtonDivX3, PlayButtonDivY4, Pla
 float PrevSongMoveX =236f;
 float PrevSongMoveY = 495f;
 float PrevSongDivX1 = DivX + DivWidth*0.0625+(0.03125+PrevSongMoveX);
-;
 float PrevSongDivY2 = DivY + DivHeight*0.03125+(0.03125+PrevSongMoveY);
 float PrevSongDivX3 = DivX + DivWidth*0.03125+(0.0625+PrevSongMoveX) ;
 float PrevSongDivY4 = DivY + DivHeight*0.0625+(0.0625+PrevSongMoveY);
 float PrevSongDivX5 = DivX + DivWidth*0.0625+(0.03125+PrevSongMoveX);
 float PrevSongDivY6 = DivY + DivHeight*0.09375+(0.09375+PrevSongMoveY);
-;
-triangle(PrevSongDivX1, PrevSongDivY2, PrevSongDivX3, PrevSongDivY4, PrevSongDivX5, PrevSongDivY6)
-  ;
+triangle(PrevSongDivX1, PrevSongDivY2, PrevSongDivX3, PrevSongDivY4, PrevSongDivX5, PrevSongDivY6);
 float moveX = 236f;
 float moveY = 495f;
 float lineLength = 20f;
@@ -172,13 +145,11 @@ line(PrevSongDivX3, PrevSongDivY2, PrevSongDivX3, PrevSongDivY6);
 float BackTenMoveX =316f;
 float BackTenMoveY = 495f;
 float BackTenDivX1 = DivX + DivWidth*0.0625+(0.03125+BackTenMoveX);
-;
 float BackTenDivY2 = DivY + DivHeight*0.03125+(0.03125+BackTenMoveY);
 float BackTenDivX3 = DivX + DivWidth*0.03125+(0.0625+BackTenMoveX) ;
 float BackTenDivY4 = DivY + DivHeight*0.0625+(0.0625+BackTenMoveY);
 float BackTenDivX5 = DivX + DivWidth*0.0625+(0.03125+BackTenMoveX);
 float BackTenDivY6 = DivY + DivHeight*0.09375+(0.09375+BackTenMoveY);
-;
 triangle(BackTenDivX1, BackTenDivY2, BackTenDivX3, BackTenDivY4, BackTenDivX5, BackTenDivY6);
 //
 float PausemoveX = 906f;
@@ -195,15 +166,12 @@ float SkipSongMoveX =480f;
 float SkipSongMoveY = 495f;
 float SkipSonglineLength = 20f;
 float SkipSongDivX1 = DivX + DivWidth*0.03125+(0.0625+SkipSongMoveX);
-;
 float SkipSongDivY2 = DivY + DivHeight*0.03125+(0.03125+SkipSongMoveY);
 float SkipSongDivX3 = DivX + DivWidth*0.0625+(0.03125+SkipSongMoveX) ;
 float SkipSongDivY4 = DivY + DivHeight*0.0625+(0.0625+SkipSongMoveY);
 float SkipSongDivX5 = DivX + DivWidth*0.03125+(0.0625+SkipSongMoveX);
 float SkipSongDivY6 = DivY + DivHeight*0.09375+(0.09375+SkipSongMoveY);
-;
-triangle(SkipSongDivX1, SkipSongDivY2, SkipSongDivX3, SkipSongDivY4, SkipSongDivX5, SkipSongDivY6)
-  ;
+triangle(SkipSongDivX1, SkipSongDivY2, SkipSongDivX3, SkipSongDivY4, SkipSongDivX5, SkipSongDivY6);
 line(SkipSongDivX3, SkipSongDivY2, SkipSongDivX3, SkipSongDivY6);
 //
 line(muteDivX, muteDivY, muteDivX + muteDivWidth, muteDivY + muteDivHeight);
@@ -255,6 +223,39 @@ while ( imageHeightAdjusted1 > ImageDivHeight ) {
   imageHeightAdjusted1 = imageWidthAdjusted2 / image2AspectRation_GreatOne ; //CHANGE THIS
 }//End WHILE
 //image();
+image(Image1, ScreenDivX, ScreenDivY, ScreenDivWidth, ScreenDivHeight);
+// 
+/*
+float ratioW = ScreenDivWidth / Image1.width;
+float ratioH = ScreenDivHeight / Image1.height;
+//
+float scaleFactor = min(ratioW, ratioH);
+// 
+float displayW = Image1.width * scaleFactor;
+float displayH = Image1.height * scaleFactor;
+// 
+float imageX = ScreenDivX + (ScreenDivWidth - displayW) / 2;
+float imageY = ScreenDivY + (ScreenDivHeight - displayH) / 2;
+image(Image1, imageX, imageY, displayW, displayH);
+*/
+//
+//Text
+float SongTitleDivWidth = appWidth * 0.5;
+float SongTitleDivX = (appWidth / 2) - (SongTitleDivWidth / 2);
+float SongTitleDivY = 0;
+float SongTitleDivHeight = appHeight * 0.1;
+rect( SongTitleDivX, SongTitleDivY, SongTitleDivWidth, SongTitleDivHeight );
+//
+String titleText = "An Extremely Long Song Title That Automagically Fits";
+float optimalFontSize = SongTitleDivHeight * 0.5; // Start at 50% of the box height
+textSize(optimalFontSize);
 
-//
-//
+// Loop reduces font size until the text width fits comfortably inside the bounding box
+while (textWidth(titleText) > SongTitleDivWidth - 20) { 
+  optimalFontSize -= 1;
+  textSize(optimalFontSize);
+}
+
+fill(0);
+textAlign(CENTER, CENTER);
+text(titleText, SongTitleDivX, SongTitleDivY, SongTitleDivWidth, SongTitleDivHeight);
