@@ -60,8 +60,9 @@ float ScreenDivX = DivX + DivWidth*3/16;
 float ScreenDivY = DivY + DivHeight*3/16;
 float ScreenDivWidth = DivX + DivWidth*3/24;
 float ScreenDivHeight= DivY + DivHeight*3/24;
+fill(0, 150, 255); 
 rect( ScreenDivX, ScreenDivY, ScreenDivWidth, ScreenDivHeight );
-
+fill(255);      
 //
 float PrevSongDivWidth = DivWidth/12;
 float PrevSongDivX = DivX + DivWidth*0.250;
@@ -210,6 +211,7 @@ textSize(DoubleSpeedDivHeight * 0.8);
 fill(#2C08FF);
 text("2X", DoubleSpeedDivX + DoubleSpeedDivWidth/2, DoubleSpeedDivY + DoubleSpeedDivHeight/2);
 //
+/*
 //Images & Aspoect Ratio Algoritrhm, including WHILE Loop
 float image2AspectRation_GreatOne = ( imageWidth2 > imageHeight2 ) ? float(imageWidth2) / float(imageHeight2) : float(imageHeight2) / float(imageWidth2 ) ;
 println("Verify Image Aspect Ratio Greater than One:", image2AspectRation_GreatOne>=1, "\tActual Number:", image2AspectRation_GreatOne);
@@ -224,8 +226,8 @@ while ( imageHeightAdjusted1 > ImageDivHeight ) {
 }//End WHILE
 //image();
 image(Image1, ScreenDivX, ScreenDivY, ScreenDivWidth, ScreenDivHeight);
+*/
 // 
-/*
 float ratioW = ScreenDivWidth / Image1.width;
 float ratioH = ScreenDivHeight / Image1.height;
 //
@@ -237,16 +239,17 @@ float displayH = Image1.height * scaleFactor;
 float imageX = ScreenDivX + (ScreenDivWidth - displayW) / 2;
 float imageY = ScreenDivY + (ScreenDivHeight - displayH) / 2;
 image(Image1, imageX, imageY, displayW, displayH);
-*/
 //
 //Text
 float SongTitleDivWidth = appWidth * 0.5;
 float SongTitleDivX = (appWidth / 2) - (SongTitleDivWidth / 2);
 float SongTitleDivY = 0;
 float SongTitleDivHeight = appHeight * 0.1;
+fill(0, 150, 255); 
 rect( SongTitleDivX, SongTitleDivY, SongTitleDivWidth, SongTitleDivHeight );
+fill(255); 
 //
-String titleText = "An Extremely Long Song Title That Automagically Fits";
+String titleText = "Song Title";
 float optimalFontSize = SongTitleDivHeight * 0.5; // Start at 50% of the box height
 textSize(optimalFontSize);
 
